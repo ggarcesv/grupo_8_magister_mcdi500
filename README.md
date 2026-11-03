@@ -1,3 +1,3 @@
-# grupo_8_magister_mcdi500
+# Grupo 8 Magister MCDI500
 
 # Giuliano Garces
