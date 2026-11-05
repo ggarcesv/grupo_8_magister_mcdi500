@@ -4,9 +4,9 @@ una breve descripcion del problema a resolver...
 
 ## Integrantes
 - Cristopher Contreras (@cristopherconar )
-- Gabriel Cruz (@usuario-github)
-- Giuliano Garces (@usuario-github)
-- Ana Hermosilla (@usuario-github)
+- Gabriel Cruz (@gcruzstm-gif)
+- Giuliano Garces (@ggarcesv)
+- Ana Hermosilla (@Ana-Hermosilla)
 
 
 ## Datos
