@@ -2,7 +2,7 @@
 
 # Giuliano Garces
 
-#Gabriel Cruz 
+# Gabriel Cruz 
 
 # Ana Hermosilla
 # Cristopher Contreras
