@@ -3,7 +3,7 @@
 una breve descripcion del problema a resolver...
 
 ## Integrantes
-- Cristopher Contreras (@usuario-github)
+- Cristopher Contreras (@cristopherconar )
 - Gabriel Cruz (@usuario-github)
 - Giuliano Garces (@usuario-github)
 - Ana Hermosilla (@usuario-github)
