@@ -14,9 +14,9 @@ El análisis se centra en identificar variables clave como ubicación (comuna), 
 
 
 ## Datos
-- Fuente: Stroke Prediction Dataset (fedesoriano, Kaggle)
-- Enlace: https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset
-- Estructura: 32598 filas x 90 columnas
+- Fuente: [Inside Airbnb]
+- Enlace: https://data.insideairbnb.com/chile/rm/santiago/2026-09-23/data/listings.csv.gz
+- Estructura: 18904 filas × 90 columnas
 - Ubicación esperada: `data/raw/`
 
 ## Estructura del repositorio
