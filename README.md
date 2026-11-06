@@ -16,7 +16,7 @@ El análisis se centra en identificar variables clave como ubicación (comuna), 
 ## Datos
 - Fuente: Stroke Prediction Dataset (fedesoriano, Kaggle)
 - Enlace: https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset
-- Estructura: 5110 filas x 12 columnas
+- Estructura: 32598 filas x 90 columnas
 - Ubicación esperada: `data/raw/`
 
 ## Estructura del repositorio
@@ -36,8 +36,7 @@ Python 3.13
     # source .venv/bin/activate      # macOS y Linux
     python -m pip install -r requirements.txt
 
-Ejecutar los cuadernos en orden, F1 y luego F2. Cada cuaderno localiza la raíz del
-proyecto aunque Jupyter lo abra en su propia carpeta.
+Ejecutar los cuadernos en orden, F1 y luego F2. Cada cuaderno localiza la raíz del proyecto aunque Jupyter lo abra en su propia carpeta.
 
 ### Dependencias declaradas
 - ipykernel
