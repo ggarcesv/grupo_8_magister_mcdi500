@@ -13,6 +13,7 @@ El análisis se centra en identificar variables clave como ubicación (comuna), 
 - Ana Hermosilla (@Ana-Hermosilla)
 
 
+<<<<<<< HEAD
 ## Datos
 - Fuente: [Inside Airbnb]
 - Enlace: https://data.insideairbnb.com/chile/rm/santiago/2026-09-23/data/listings.csv.gz
@@ -52,3 +53,6 @@ Prefijos usados: docs, data, feat, fix.
 - Los datos son comunes a todas las fases (`data/`); los cuadernos se separan por fase.
 - Semilla aleatoria fijada en 42 para asegurar reproducibilidad.
 - Registro breve de las decisiones relevantes y su motivo, actualizado al cerrar cada fase.
+=======
+# Hola Gabriel soy Anita
+>>>>>>> 3e24155db53da628b921d833288176e7ca8ba0f7
