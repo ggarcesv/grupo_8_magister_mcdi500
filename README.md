@@ -1,6 +1,10 @@
-# Análisis de Inversión en Airbnb — Grupo 8
+# Estudio de Inversión Inmobiliaria Airbnb — Grupo 8
 
-una breve descripcion del problema a resolver...
+El objetivo principal es resolver la siguiente problemática:
+
+¿Qué características de los alojamientos publicados en Airbnb se asocian con diferencias en sus precios y niveles de ocupación estimada, y cómo pueden estos hallazgos orientar a potenciales nuevos anfitriones?
+
+El análisis se centra en identificar variables clave como ubicación (comuna), tipo de propiedad, comodidades y características del anfitrión, para determinar su impacto en el precio (tarifas) y el desempeño (ocupación anual estimada e ingresos).
 
 ## Integrantes
 - Cristopher Contreras (@cristopherconar )
