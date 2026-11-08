@@ -1,0 +1,19 @@
+variable,rol_analitico,descripcion,dtype,n_unicos,pct_nulos
+id,identificador,Identificador único del anuncio (listing),int64,18904,0.0
+price,continua,Precio publicado por noche,str,10084,4.8
+accommodates,discreta,Capacidad máxima de huéspedes,int64,16,0.0
+room_type,nominal,"Tipo de alojamiento (Entire home/apt, Private room, etc.)",str,4,0.0
+host_is_superhost,binaria,1 = El anfitrión tiene categoría Superhost,str,2,0.0
+neighbourhood_cleansed,nominal,Comuna donde se ubica el alojamiento,str,32,0.0
+latitude,continua,Latitud geográfica del alojamiento,float64,12384,0.0
+estimated_occupancy_l365d,discreta,Días de ocupación estimada en los últimos 365 días,int64,88,0.0
+instant_bookable,binaria,1 = Reserva inmediata habilitada,float64,0,100.0
+first_review,fecha,Fecha de la primera reseña recibida,str,3067,15.2
+amenities,alta_cardinalidad,Lista de texto con las comodidades ofrecidas,str,17712,0.0
+host_response_time,nominal,Tiempo de respuesta promedio del anfitrión,float64,0,100.0
+reviews_per_month,continua,Promedio de reseñas recibidas por mes,float64,1015,15.2
+bedrooms,discreta,Cantidad de habitaciones,float64,21,0.0
+bathrooms,discreta,Cantidad de baños,float64,0,100.0
+beds,discreta,Cantidad de camas,float64,25,1.1
+minimum_nights,discreta,Cantidad mínima de noches para reservar,float64,55,0.0
+maximum_nights,discreta,Cantidad máxima de noches para reservar,float64,128,0.0
