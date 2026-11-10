@@ -21,3 +21,7 @@ desktop.ini
 # Datos pesados y modelos
 *.ckpt
 *.pth
+
+# Datos originales excluidos por contener informacion personal
+data/raw/*
+!data/raw/.gitkeep
