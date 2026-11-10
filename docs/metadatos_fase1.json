@@ -4,13 +4,13 @@
   "fase": "F1",
   "fecha_ejecucion": "2026-11-09",
   "semilla": 42,
-  "python": "3.13.16",
+  "python": "3.14.8",
   "sistema": "Windows 11",
-  "interprete": "c:\\Users\\Xheis\\OneDrive\\Escritorio\\grupo_8_magister_mcdi500\\.venv\\Scripts\\python.exe",
+  "interprete": "c:\\Users\\goku9\\Desktop\\grupo_8_magister_mcdi500\\.venv\\Scripts\\python.exe",
   "entorno_virtual": true,
   "dependencias": {
     "numpy": "2.5.4",
-    "pandas": "3.1.0",
+    "pandas": "3.1.1",
     "matplotlib": "3.11.2",
     "sklearn": "1.9.1"
   },
