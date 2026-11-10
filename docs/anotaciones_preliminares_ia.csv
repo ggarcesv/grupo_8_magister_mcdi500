@@ -1,0 +1,91 @@
+﻿variable,rol_analitico,descripcion,tipo_original,no_nulos,pct_nulos,rol_esperado,prioridad,observaciones
+id,identificador,Identificador único del anuncio en Airbnb.,int64,18904,0.0,identificador,control,No promediar; sirve para verificar duplicados.
+listing_url,identificador,Dirección URL pública del anuncio.,str,18904,0.0,identificador,referencia,"Enlace, no variable numérica analítica."
+scrape_id,identificador,Identificador del proceso de extracción de Inside Airbnb.,int64,18904,0.0,identificador,control,No representa una magnitud.
+last_scraped,fecha,Fecha en que se extrajo la información del anuncio.,str,18904,0.0,fecha,control,Requiere conversión a fecha en F2 si se utiliza.
+source,nominal,Procedencia del registro dentro del proceso de recopilación.,str,863,95.43,nominal,secundaria,Cobertura reducida; verificar categorías y significado.
+name,texto libre,Título publicado para el alojamiento.,str,18904,0.0,texto libre,secundaria,Texto no estructurado.
+description,texto libre,Descripción textual del alojamiento.,str,18786,0.62,texto libre,secundaria,Puede contener HTML o formato libre.
+neighborhood_overview,vacía,Descripción del entorno o barrio redactada para el anuncio.,float64,0,100.0,texto libre,no utilizable,Columna completamente vacía en la exploración inicial.
+picture_url,identificador,Enlace a la imagen principal del anuncio.,str,18904,0.0,identificador,referencia,URL; no usar para promedios.
+host_id,identificador,Identificador único del anfitrión de Airbnb.,int64,18904,0.0,identificador,secundaria,Permite identificar anuncios de un mismo anfitrión.
+host_url,identificador,Enlace al perfil público del anfitrión.,str,18904,0.0,identificador,referencia,URL.
+host_profile_id,identificador,Identificador del perfil del anfitrión informado en este archivo.,int64,18904,0.0,identificador,referencia,Campo de esquema extendido; confirmar relación con host_id.
+host_profile_url,identificador,Enlace al perfil de anfitrión informado en este archivo.,str,18904,0.0,identificador,referencia,Campo extendido; confirmar equivalencia con host_url.
+host_name,alta cardinalidad,Nombre público del anfitrión.,str,18904,0.0,alta cardinalidad,secundaria,No equivale a un identificador estable.
+host_since,vacía,Fecha desde la cual la persona figura como anfitriona en Airbnb.,float64,0,100.0,fecha,no utilizable,Completamente vacía.
+hosts_time_as_user_years,discreta,Años de antigüedad del anfitrión como usuario de la plataforma.,int64,18904,0.0,discreta,secundaria,Campo extendido; verificar método de cálculo.
+hosts_time_as_user_months,discreta,Meses de antigüedad del anfitrión como usuario de la plataforma.,int64,18904,0.0,discreta,secundaria,Verificar si corresponde a total acumulado o componente de meses.
+hosts_time_as_host_years,discreta,Años de antigüedad como anfitrión.,int64,18904,0.0,discreta,secundaria,Campo extendido; verificar método de cálculo.
+hosts_time_as_host_months,discreta,Meses de antigüedad como anfitrión.,int64,18904,0.0,discreta,secundaria,Verificar si es total acumulado o meses adicionales.
+host_location,alta cardinalidad,Ubicación declarada por el anfitrión.,str,12768,32.46,alta cardinalidad,secundaria,No confundir con ubicación del alojamiento.
+host_about,texto libre,Descripción o biografía publicada por el anfitrión.,str,9206,51.3,texto libre,secundaria,Texto libre.
+host_response_time,vacía,"Tiempo habitual de respuesta a consultas, por categorías.",float64,0,100.0,ordinal,no utilizable,Completamente vacía.
+host_response_rate,vacía,Porcentaje de consultas respondidas por el anfitrión.,float64,0,100.0,continua,no utilizable,Completamente vacía.
+host_acceptance_rate,vacía,Porcentaje de solicitudes aceptadas por el anfitrión.,float64,0,100.0,continua,no utilizable,Completamente vacía.
+host_is_superhost,binaria,Indica si el anfitrión tiene categoría Superhost (t/f).,str,18904,0.0,binaria,secundaria,Verificar valores de la columna.
+host_thumbnail_url,vacía,URL de la miniatura de la foto del anfitrión.,float64,0,100.0,identificador,no utilizable,Completamente vacía.
+host_picture_url,identificador,URL de la imagen del anfitrión.,str,18904,0.0,identificador,referencia,Enlace de imagen.
+host_neighbourhood,vacía,Barrio declarado por el anfitrión.,float64,0,100.0,nominal,no utilizable,Completamente vacía.
+host_listings_count,discreta,Número de anuncios asociados al anfitrión según la plataforma.,int64,18904,0.0,discreta,secundaria,Podría diferir del conteo calculado por Inside Airbnb.
+host_total_listings_count,vacía,Número total de anuncios del anfitrión según la plataforma.,float64,0,100.0,discreta,no utilizable,Completamente vacía.
+host_verifications,vacía,Verificaciones declaradas para el anfitrión.,float64,0,100.0,texto libre,no utilizable,Completamente vacía; originalmente puede contener lista.
+host_has_profile_pic,binaria,Indica si el perfil del anfitrión tiene foto (t/f).,str,18904,0.0,binaria,secundaria,Variable categórica binaria.
+host_identity_verified,binaria,Indica si Airbnb declara verificada la identidad del anfitrión (t/f).,str,18904,0.0,binaria,secundaria,No implica verificación independiente por el equipo.
+neighbourhood,vacía,Nombre del barrio o ubicación informado directamente en el anuncio.,float64,0,100.0,nominal,no utilizable,Completamente vacía.
+neighbourhood_cleansed,nominal,Nombre del sector territorial obtenido por geocodificación de las coordenadas del anuncio.,str,18904,0.0,nominal,principal,En Santiago verificar correspondencia con las comunas reportadas; campo calculado por Inside Airbnb.
+neighbourhood_group_cleansed,vacía,Agrupación territorial superior normalizada.,float64,0,100.0,nominal,no utilizable,Completamente vacía.
+latitude,continua,Latitud geográfica del alojamiento.,float64,18904,0.0,continua,principal,"Coordenada, no variable para promediar como precio."
+longitude,continua,Longitud geográfica del alojamiento.,float64,18904,0.0,continua,principal,"Coordenada, no variable para promediar como precio."
+property_type,nominal,"Tipo de propiedad que se ofrece (departamento, casa u otro).",str,18904,0.0,nominal,principal,Clasificación más detallada que room_type.
+room_type,nominal,"Modalidad de alojamiento (entero, habitación privada, compartida, etc.).",str,18904,0.0,nominal,principal,Categorías nominales.
+accommodates,discreta,Cantidad máxima de huéspedes que puede alojar el anuncio.,int64,18904,0.0,discreta,principal,Conteo.
+bathrooms,vacía,Número de baños informado para el alojamiento.,float64,0,100.0,continua,no utilizable,Completamente vacía; revisar bathrooms_text como alternativa.
+bathrooms_text,nominal,Descripción textual del número y tipo de baño.,str,18890,0.07,nominal,secundaria,Podría requerir extracción numérica posterior en F2.
+bedrooms,discreta,Número de dormitorios del alojamiento.,float64,18899,0.03,discreta,principal,Conteo almacenado como float por presencia de nulos.
+beds,discreta,Número de camas ofrecidas.,float64,18701,1.07,discreta,principal,Conteo almacenado como float por presencia de nulos.
+amenities,texto libre,Lista de servicios y comodidades declaradas por el anfitrión.,str,18904,0.0,texto libre,principal,"Lista serializada como texto; multietiqueta, analizar en F2."
+price,continua,"Precio diario publicado del alojamiento, según el formato monetario del dataset.",str,18006,4.75,continua,principal,El símbolo $ es parte de la exportación y no confirma por sí solo la moneda; convertir en F2 y contrastar unidad.
+price_quote_checkin_date,fecha,Fecha de entrada asociada a la cotización de precio.,str,18325,3.06,fecha,secundaria,Campo extendido; confirmar definición del período cotizado.
+price_quote_checkout_date,fecha,Fecha de salida asociada a la cotización de precio.,str,18325,3.06,fecha,secundaria,Campo extendido; confirmar definición del período cotizado.
+price_quote_total_price,continua,Monto total reportado para una cotización de alojamiento.,float64,18006,4.75,continua,secundaria,"Campo extendido; confirmar moneda, impuestos y cargos."
+price_quote_price_per_night,continua,Monto por noche reportado para la cotización.,float64,18006,4.75,continua,secundaria,Campo extendido; comprobar diferencias con price.
+price_quote_raw,texto libre,Contenido original o respuesta sin procesar de la cotización.,str,18325,3.06,texto libre,referencia,Campo extendido; confirmar estructura antes de procesar.
+minimum_nights,discreta,Número mínimo de noches exigido para reservar.,float64,18899,0.03,discreta,secundaria,Conteo; faltantes posibles.
+maximum_nights,discreta,Número máximo de noches permitido para reservar.,float64,18899,0.03,discreta,secundaria,Conteo; límites pueden ser muy altos.
+minimum_minimum_nights,discreta,Menor mínimo de noches observado en el calendario disponible.,float64,18899,0.03,discreta,secundaria,Interpretación a validar con diccionario oficial.
+maximum_minimum_nights,discreta,Mayor mínimo de noches observado en el calendario disponible.,float64,18899,0.03,discreta,secundaria,Interpretación a validar con diccionario oficial.
+minimum_maximum_nights,discreta,Menor máximo de noches permitido entre períodos del calendario.,float64,18899,0.03,discreta,secundaria,Interpretación a validar con diccionario oficial.
+maximum_maximum_nights,discreta,Mayor máximo de noches permitido entre períodos del calendario.,float64,18899,0.03,discreta,secundaria,Interpretación a validar con diccionario oficial.
+minimum_nights_avg_ntm,continua,Promedio del mínimo de noches requerido en próximos meses.,float64,18904,0.0,continua,secundaria,"Promedio, no conteo entero necesariamente."
+maximum_nights_avg_ntm,continua,Promedio del máximo de noches permitido en próximos meses.,float64,18904,0.0,continua,secundaria,"Promedio, no conteo entero necesariamente."
+calendar_updated,vacía,Fecha de actualización del calendario del alojamiento.,float64,0,100.0,fecha,no utilizable,Completamente vacía.
+has_availability,binaria,Indicador de disponibilidad declarada en el calendario.,str,18700,1.08,binaria,secundaria,No es ocupación real; verificar valores.
+availability_30,discreta,Días disponibles en el calendario de los próximos 30 días.,int64,18904,0.0,discreta,principal,No permite inferir reservas confirmadas.
+availability_60,discreta,Días disponibles en el calendario de los próximos 60 días.,int64,18904,0.0,discreta,secundaria,Días no disponibles pueden estar bloqueados o reservados.
+availability_90,discreta,Días disponibles en el calendario de los próximos 90 días.,int64,18904,0.0,discreta,secundaria,No equivale a ocupación efectiva.
+availability_365,discreta,Días disponibles en el calendario de los próximos 365 días.,int64,18904,0.0,discreta,principal,No equivale a ocupación ni noches vendidas.
+calendar_last_scraped,fecha,Fecha de la última extracción del calendario de disponibilidad.,str,18904,0.0,fecha,control,Requiere conversión a fecha para cálculos temporales.
+number_of_reviews,discreta,Cantidad acumulada de reseñas del anuncio.,int64,18904,0.0,discreta,principal,No equivale al número de reservas.
+number_of_reviews_ltm,discreta,Reseñas recibidas durante los últimos 12 meses.,int64,18904,0.0,discreta,secundaria,LTM: last twelve months.
+number_of_reviews_l30d,discreta,Reseñas recibidas durante los últimos 30 días.,int64,18904,0.0,discreta,secundaria,"Indicador de actividad, no reservas confirmadas."
+availability_eoy,discreta,Días disponibles hasta fin de año según la extracción.,int64,18904,0.0,discreta,secundaria,Campo extendido; confirmar horizonte exacto.
+number_of_reviews_ly,discreta,Reseñas contabilizadas en el año anterior según el archivo.,int64,18904,0.0,discreta,secundaria,Campo extendido; confirmar período exacto.
+estimated_occupancy_l365d,discreta,Estimación de noches ocupadas en los últimos 365 días.,int64,18904,0.0,discreta,con cautela,Estimación metodológica; NO ocupación verificada.
+estimated_revenue_l365d,continua,Estimación de ingresos del alojamiento en los últimos 365 días.,float64,18006,4.75,continua,con cautela,Estimación; NO rentabilidad ni ingresos comprobados; moneda pendiente de verificar.
+first_review,fecha,Fecha de la primera reseña recibida por el anuncio.,str,16035,15.18,fecha,secundaria,No es necesariamente fecha de primera reserva.
+last_review,fecha,Fecha de la reseña más reciente del anuncio.,str,16035,15.18,fecha,secundaria,No implica última ocupación real.
+review_scores_rating,continua,Calificación global publicada del alojamiento.,float64,16035,15.18,continua,secundaria,Verificar escala utilizada en el extracto.
+review_scores_accuracy,continua,Calificación de precisión de la descripción del anuncio.,float64,16035,15.18,continua,secundaria,Reseñas de huéspedes.
+review_scores_cleanliness,continua,Calificación de limpieza.,float64,16035,15.18,continua,secundaria,Reseñas de huéspedes.
+review_scores_checkin,continua,Calificación del proceso de llegada o check-in.,float64,16035,15.18,continua,secundaria,Reseñas de huéspedes.
+review_scores_communication,continua,Calificación de comunicación con el anfitrión.,float64,16035,15.18,continua,secundaria,Reseñas de huéspedes.
+review_scores_location,continua,Calificación de ubicación otorgada por huéspedes.,float64,16034,15.18,continua,secundaria,Reseñas de huéspedes.
+review_scores_value,continua,Calificación de relación calidad-precio según huéspedes.,float64,16035,15.18,continua,secundaria,No se interpreta como rentabilidad.
+license,alta cardinalidad,Información de licencia o registro del alojamiento.,str,169,99.11,alta cardinalidad,secundaria,Muy pocos valores disponibles; revisar formato y jurisdicción.
+instant_bookable,vacía,Permite identificar si existe reserva inmediata habilitada.,float64,0,100.0,binaria,no utilizable,Completamente vacía.
+calculated_host_listings_count,discreta,"Cantidad de anuncios del anfitrión en la ciudad o región, calculada por Inside Airbnb.",int64,18904,0.0,discreta,secundaria,Se calcula dentro del ámbito geográfico del archivo; puede diferir del conteo general del anfitrión.
+calculated_host_listings_count_entire_homes,discreta,Anuncios de alojamientos enteros asociados al anfitrión.,int64,18904,0.0,discreta,secundaria,Conteo calculado.
+calculated_host_listings_count_private_rooms,discreta,Anuncios de habitaciones privadas asociados al anfitrión.,int64,18904,0.0,discreta,secundaria,Conteo calculado.
+calculated_host_listings_count_shared_rooms,discreta,Anuncios de habitaciones compartidas asociados al anfitrión.,int64,18904,0.0,discreta,secundaria,Conteo calculado.
+reviews_per_month,continua,Promedio de reseñas por mes durante la vida del anuncio.,float64,16035,15.18,continua,secundaria,Promedio calculado por Inside Airbnb; no equivale a reservas mensuales.
