@@ -75,10 +75,10 @@ Asegurar que el data set descargado corresponda a la captura del 23 de septiembr
 
 ## Convención de commits
 Prefijos usados: 
-docs: modificar documentación
-data: Incorporar o actualizar datos
-feat: incorporar una funcionalidad nueva
-fix: corregir errores o problemas
+- docs: modificar documentación
+- data: Incorporar o actualizar datos
+- feat: incorporar una funcionalidad nueva
+- fix: corregir errores o problemas
 
 ## Decisiones técnicas
  El archivo original contiene información potencialmente identificable de los anfitriones, como nombres, descripciones y enlaces a perfiles. Por esta razón, no se distribuye ni versiona en este repositorio.
