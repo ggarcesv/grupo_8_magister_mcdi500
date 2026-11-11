@@ -25,3 +25,4 @@ desktop.ini
 # Datos originales excluidos por contener informacion personal
 data/raw/*
 !data/raw/.gitkeep
+

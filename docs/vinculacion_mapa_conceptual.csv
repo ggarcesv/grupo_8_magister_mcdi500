@@ -1,10 +1,13 @@
-nodo_mapa,donde_se_implementa,evidencia
-Comprensión del problema y contexto,Sección 1 - Definición del proyecto,"Problemática, objetivos y alcance declarados"
-Identificación de datos,Sección 5 - Ficha y diccionario,Dataset Airbnb Santiago y diccionario de 90 variables
-Habilitación del entorno de trabajo,Secciones 2 y 3 - Entorno y estructura,"Intérprete, dependencias, carpetas y archivos verificados"
-Python,Secciones 1 a 7 - Código ejecutado,"Funciones, comprobaciones y validación técnica"
-Jupyter Notebooks,Notebook F1,"Celdas de código, documentación y resultados"
-Git,Sección 6 - Control de versiones,"Rama de trabajo, historial de commits y estado del repositorio"
-GitHub,Sección 6 - Repositorio remoto,Repositorio origin configurado para el grupo
-Comprobación del entorno reproducible,"Secciones 2, 3 y 7",Entorno y requisitos comprobados; validación F1 satisfactoria
-Caracterización del problema a investigar,Secciones 1 y 5,"Definición de la problemática, ficha y roles analíticos"
+componente_mapa,elemento,seccion_cuaderno,evidencia,proposito
+Contexto problematizador,Problema de investigación,1. Definición del problema y contexto,"Se presenta la problemática sobre la relación entre características de alojamientos, precios y ocupación.",Justifica por qué el proyecto es relevante.
+Pregunta de investigación,"Relación entre comodidades, capacidad, ubicación, precio y ocupación",1. Definición del problema y contexto,Se explicita la pregunta que orienta el proyecto.,Delimita el objetivo del análisis.
+Conjunto de datos,Inside Airbnb – Santiago,4. Caracterización del dataset,"Se documenta fuente, URL, estructura, unidad de análisis y licencia.",Identifica y justifica la base de datos utilizada.
+Restricciones del dataset,"Sesgos, ocupación estimada y datos personales",10. Reflexión técnica,Se documentan limitaciones del dataset y decisiones sobre datos personales.,Explicita restricciones metodológicas y éticas.
+Ecosistema tecnológico,"Python, Jupyter, Git, GitHub, entorno virtual",2. Entorno reproducible,"Se verifica el intérprete, dependencias y estructura de trabajo colaborativa.",Garantiza reproducibilidad y trazabilidad.
+Flujo de trabajo reproducible,Comprensión → identificación → exploración → limpieza → análisis → evaluación → comunicación,Introducción y organización general de F1,Se explica el rol de F1 dentro del flujo general del proyecto.,Ubica la fase actual dentro del proyecto completo.
+Estructura del repositorio,"data/, docs/, src/, F1-F4, README, requirements, gitignore",6. Estructura y trazabilidad del proyecto,"Se crean y/o verifican carpetas, archivos base y organización del repositorio.",Ordena el proyecto y facilita su reproducción.
+Control de versiones,Git y GitHub,7. Versionamiento,"Se documenta el uso de ramas, commits y reglas de versionado.",Permite trabajo colaborativo y seguimiento de cambios.
+Variables del proyecto,Variables objetivo e iniciales candidatas,5. Diccionario de variables,Se construye y audita el diccionario de variables con roles analíticos.,Documenta qué variables serán potencialmente utilizadas en F2.
+Tratamiento inicial de datos,Reglas preliminares de limpieza y transformación,5. Diccionario de variables / 10. Reflexión técnica,"Se dejan observaciones sobre price, nulos, variables vacías y tipos de datos.",Anticipa decisiones de preprocesamiento para F2.
+Documentación científica,"README, notebooks, diccionario, registro de decisiones",9. Persistencia y trazabilidad,Se generan archivos documentales y de soporte del proyecto.,Asegura trazabilidad de las decisiones tomadas.
+Reflexión técnica grupal,"Hallazgos, dificultades, decisiones abiertas",10. Reflexión técnica,"Se registran aprendizajes, ajustes y decisiones pendientes.",Cierra la Fase 1 con una reflexión metodológica.
