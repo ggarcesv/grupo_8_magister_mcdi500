@@ -1,8 +1,8 @@
 {
-  "proyecto": "Caracterización de alojamientos Airbnb en Santiago de chile",
+  "proyecto": "Relación entre características de alojamientos frente a precios y niveles de ocupación en Airbnb",
   "grupo": "Grupo 8",
   "fase": "F1",
-  "fecha_ejecucion": "2026-11-09",
+  "fecha_ejecucion": "2026-11-11",
   "semilla": 42,
   "python": "3.13.16",
   "sistema": "Windows 11",
