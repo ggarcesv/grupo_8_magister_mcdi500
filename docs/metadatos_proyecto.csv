@@ -7,8 +7,8 @@ datos.fuente.plataforma,Inside Airbnb
 datos.fuente.autor,Inside Airbnb (Murray Cox)
 datos.fuente.url,http://insideairbnb.com/get-the-data/
 decisiones.imputacion.estrategia,mediana
-decisiones.imputacion.columnas,"price, accommodates, latitude, estimated_occupancy_l365d, reviews_per_month, bedrooms, beds, minimum_nights, maximum_nights"
+decisiones.imputacion.columnas,"accommodates, latitude, bedrooms, beds, minimum_nights, maximum_nights"
 decisiones.limpieza.maximum_nights,acotado a 1125 con clip
 decisiones.escalador,robust
-decisiones.columnas_escaladas,"price, accommodates, latitude, estimated_occupancy_l365d, reviews_per_month, bedrooms, beds, minimum_nights, maximum_nights"
+decisiones.columnas_escaladas,"accommodates, latitude, bedrooms, beds, minimum_nights, maximum_nights, n_comodidades"
 decisiones.categoricas,"room_type, host_is_superhost, neighbourhood_cleansed"
