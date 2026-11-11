@@ -1,11 +1,11 @@
 # Caracterización de precios y ocupación estimada en Airbnb en Santiago de Chile — Grupo 8
 
-Problemática principal: ¿Qué relación existe entre las comodidades, la capacidad de alojamiento y la ubicación de los departamentos publicados en Airbnb Santiago con sus precios y niveles de ocupación anual estimada?
+Problemática principal: ¿Qué relación existe entre las comodidades, la capacidad de alojamiento y la ubicación de los alojamientos completos publicados en Airbnb Santiago con sus precios y niveles de ocupación anual estimada?
 
 El análisis tendrá un enfoque descriptivo y exploratorio. No pretende establecer relaciones causales ni determinar la rentabilidad de los alojamientos.
 
 ## Integrantes
-- Cristopher Contreras (@cristopherconar )
+- Cristopher Contreras (@cristopherconar)
 - Gabriel Cruz (@gcruzstm-gif)
 - Giuliano Garces (@ggarcesv)
 - Ana Hermosilla (@Ana-Hermosilla)
