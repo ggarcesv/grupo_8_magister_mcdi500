@@ -10,7 +10,7 @@
   "entorno_virtual": true,
   "dependencias": {
     "numpy": "2.5.4",
-    "pandas": "3.1.0",
+    "pandas": "3.1.1",
     "matplotlib": "3.11.2",
     "sklearn": "1.9.1"
   },

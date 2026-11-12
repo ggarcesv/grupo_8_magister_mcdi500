@@ -1,4 +1,4 @@
-"""Utilidades compartidas del proyecto MCDI500 - Grupo X.
+"""Utilidades compartidas del proyecto MCDI500 - Grupo 8.
 
 Este modulo lo genera el cuaderno de la Fase 1 y lo importan las fases siguientes.
 """
