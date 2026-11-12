@@ -1,14 +1,28 @@
 clave,valor
-proyecto.nombre,Caracterización de alojamientos Airbnb en Santiago de Chile
+proyecto.nombre,"Comodidades, capacidad y ubicación vs. precio y ocupación en Airbnb Santiago"
 proyecto.fase,F2
 proyecto.semilla,42
 datos.archivo,datasetairbnb.csv
 datos.fuente.plataforma,Inside Airbnb
-datos.fuente.autor,Inside Airbnb (Murray Cox)
-datos.fuente.url,http://insideairbnb.com/get-the-data/
+datos.fuente.autor,Inside Airbnb
+datos.fuente.url,https://insideairbnb.com/santiago/
+datos.fuente.fecha_compilacion,2026-09-23
+datos.fuente.licencia,CC BY 4.0
+datos.filas_iniciales,18904
+datos.filas_finales,14758
+estudio.filtro,room_type == Entire home/apt
+estudio.objetivos,"price, estimated_occupancy_l365d"
+estudio.explicativas.comodidades,amenities
+estudio.explicativas.capacidad,"accommodates, bedrooms, beds"
+estudio.explicativas.ubicacion,"neighbourhood_cleansed, latitude"
+estudio.explicativas.control,"host_is_superhost, minimum_nights, maximum_nights"
 decisiones.imputacion.estrategia,mediana
-decisiones.imputacion.columnas,"price, accommodates, latitude, estimated_occupancy_l365d, reviews_per_month, bedrooms, beds, minimum_nights, maximum_nights"
+decisiones.imputacion.columnas,"accommodates, latitude, bedrooms, beds, minimum_nights, maximum_nights"
 decisiones.limpieza.maximum_nights,acotado a 1125 con clip
+decisiones.limpieza.objetivos_faltantes,"filas eliminadas, no imputadas"
+decisiones.limpieza.precio_maximo,10000000
+decisiones.limpieza.capacidad,eliminados anuncios con más dormitorios que huéspedes
+decisiones.comodidades,"tiene_aire_acondicionado, tiene_estacionamiento, tiene_piscina, tiene_lavadora, tiene_gimnasio, tiene_ascensor, tiene_espacio_trabajo, tiene_self_checkin"
 decisiones.escalador,robust
-decisiones.columnas_escaladas,"price, accommodates, latitude, estimated_occupancy_l365d, reviews_per_month, bedrooms, beds, minimum_nights, maximum_nights"
-decisiones.categoricas,"room_type, host_is_superhost, neighbourhood_cleansed"
+decisiones.columnas_escaladas,"accommodates, latitude, bedrooms, beds, minimum_nights, maximum_nights, n_comodidades"
+decisiones.categoricas,"host_is_superhost, neighbourhood_cleansed"
