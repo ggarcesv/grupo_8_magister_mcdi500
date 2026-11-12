@@ -36,7 +36,7 @@ proyecto aunque Jupyter lo abra en su propia carpeta.
 
 ### Dependencias declaradas
 - numpy==2.5.4
-- pandas==3.1.0
+- pandas==3.1.1
 - matplotlib==3.11.2
 - scikit-learn==1.9.1
 - ipython==9.18.1
