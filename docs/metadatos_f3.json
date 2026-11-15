@@ -1,0 +1,84 @@
+{
+  "proyecto": "Relación entre características de alojamientos frente a precios y niveles de ocupación en Airbnb",
+  "grupo": "Grupo 8",
+  "fase": "F3",
+  "fecha_ejecucion": "2026-11-15",
+  "semilla": 42,
+  "python": "3.13.16",
+  "sistema": "Windows 11",
+  "dependencias": {
+    "pandas": "3.1.1",
+    "numpy": "2.5.4",
+    "scikit-learn": "1.9.1"
+  },
+  "datos": {
+    "archivo": "data/raw/datasetairbnb.csv",
+    "filas_crudas": 18904,
+    "filas_procesadas": 14758,
+    "columnas_procesadas": 50,
+    "entrenamiento": [
+      11788,
+      50
+    ],
+    "prueba": [
+      2970,
+      50
+    ]
+  },
+  "pipeline": {
+    "pasos": 17,
+    "clases": [
+      "FiltroCategoria",
+      "SelectorColumnas",
+      "ConvertidorMoneda",
+      "AcotadorSuperior",
+      "EliminadorNulos",
+      "ImputadorMediana",
+      "ImputadorMediana",
+      "ImputadorMediana",
+      "ImputadorMediana",
+      "ImputadorMediana",
+      "ImputadorMediana",
+      "FiltroMaximo",
+      "FiltroCoherencia",
+      "ExtractorComodidades",
+      "CodificadorNominal",
+      "CodificadorNominal",
+      "EscaladorRobusto"
+    ]
+  },
+  "verificaciones": {
+    "identico_a_transcripcion_f2": true,
+    "comparado_con_csv_f2": true,
+    "pruebas_superadas": 21,
+    "pruebas_totales": 21
+  },
+  "eficiencia": {
+    "implementacion_elegida": "bucle",
+    "motivo": "tiempo equivalente, ~9x menos memoria pico",
+    "tamanos_medidos": [
+      500,
+      2000,
+      8000,
+      32000
+    ],
+    "pendiente_log_log": {
+      "bucle": 1.11,
+      "apply": 1.16,
+      "vectorizada": 1.14,
+      "una_pasada": 1.11
+    },
+    "ms_en_n_mayor": {
+      "bucle": 1318.38,
+      "apply": 1724.163,
+      "vectorizada": 1453.663,
+      "una_pasada": 3142.697
+    },
+    "MB_pico_en_n_mayor": {
+      "bucle": 9.61,
+      "apply": 93.813,
+      "vectorizada": 91.588,
+      "una_pasada": 9.612
+    }
+  }
+}

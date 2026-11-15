@@ -1,0 +1,22 @@
+categoria,prueba,estado,detalle
+normal,conjunto íntegro y numérico,OK,"0 nulos, 50 columnas numéricas"
+normal,objetivos en su unidad original,OK,"price en pesos y ocupación en noches, sin escalar"
+normal,grupos one-hot excluyentes,OK,"grupos ['superhost', 'comuna'] suman 1 por fila"
+normal,reglas de limpieza respetadas,OK,sin precios imposibles ni capacidad incoherente
+límite,precio con formatos raros,OK,"[55106.0, 1000.0, nan, nan, 0.5]"
+límite,"amenities vacío, nulo y falso positivo",OK,lista vacía y nulo -> 0 comodidades; 'pool table' no cuenta como piscina
+límite,maximum_nights exactamente en el tope,OK,1125 no cambia; sobre 1125 se acota
+límite,una sola categoría,OK,una categoría -> una columna
+límite,categoría nueva solo en prueba,OK,no crea columna; la fila queda con todos los indicadores en 0
+límite,columna sin nulos con bandera,OK,sin cambios y bandera en 0
+límite,rango intercuartílico cero,OK,"RIC = 0 -> escala 1 (sklearn); valores [0.0, 0.0, 0.0, 0.0, 0.0, 298.0]"
+excepción,transformar sin ajustar,OK,ErrorDePipeline: ImputadorMediana(beds): hay que ajustar antes de transformar
+excepción,columna inexistente,OK,"KeyError: ""ImputadorMediana(columna_ficticia): faltan las columnas ['c"
+excepción,entrada que no es DataFrame,OK,TypeError: ConvertidorMoneda(price): se esperaba un DataFrame y se reci
+excepción,agregar al pipeline algo que no es Transformador,OK,TypeError: Pipeline: se esperaba un Transformador y se recibió str.
+excepción,pipeline sin ajustar,OK,ErrorDePipeline: Pipeline: hay que ajustar antes de transformar.
+excepción,estrategia de imputación inválida,OK,TypeError: estrategia debe ser una EstrategiaImputacion.
+excepción,rol sin transformador en la fábrica,OK,ValueError: Rol 'fecha' de la variable 'first_review' no tiene transform
+excepción,archivo inexistente,OK,FileNotFoundError: No se encontró no_existe.csv en C:\Users\Giuliano\Desktop\gr
+excepción,esquema sin las columnas del estudio,OK,"EsquemaInvalidoError: ""Faltan columnas requeridas por el estudio: ['room_type', 'p"
+excepción,observador sin método notificar,OK,TypeError: Un observador debe implementar notificar(evento).

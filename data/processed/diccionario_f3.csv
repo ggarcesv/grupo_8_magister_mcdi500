@@ -1,0 +1,51 @@
+columna,tipo,origen,rol_estudio,nulos
+price,float64,original (sin escalar),objetivo,0
+estimated_occupancy_l365d,int64,original (sin escalar),objetivo,0
+accommodates,float64,original (escalada),explicativa,0
+bedrooms,float64,original (escalada),explicativa,0
+beds,float64,original (escalada),explicativa,0
+latitude,float64,original (escalada),explicativa,0
+minimum_nights,float64,original (escalada),explicativa,0
+maximum_nights,float64,original (escalada),explicativa,0
+bedrooms_imputado,int64,bandera de bedrooms,control de imputación,0
+n_comodidades,float64,derivada de amenities,explicativa: comodidades,0
+tiene_aire_acondicionado,int64,derivada de amenities,explicativa: comodidades,0
+tiene_estacionamiento,int64,derivada de amenities,explicativa: comodidades,0
+tiene_piscina,int64,derivada de amenities,explicativa: comodidades,0
+tiene_lavadora,int64,derivada de amenities,explicativa: comodidades,0
+tiene_gimnasio,int64,derivada de amenities,explicativa: comodidades,0
+tiene_ascensor,int64,derivada de amenities,explicativa: comodidades,0
+tiene_espacio_trabajo,int64,derivada de amenities,explicativa: comodidades,0
+tiene_self_checkin,int64,derivada de amenities,explicativa: comodidades,0
+superhost_f,int64,one-hot de host_is_superhost,explicativa: control,0
+superhost_t,int64,one-hot de host_is_superhost,explicativa: control,0
+comuna_Cerrillos,int64,one-hot de neighbourhood_cleansed,explicativa: ubicacion,0
+comuna_Cerro_Navia,int64,one-hot de neighbourhood_cleansed,explicativa: ubicacion,0
+comuna_Conchalí,int64,one-hot de neighbourhood_cleansed,explicativa: ubicacion,0
+comuna_El_Bosque,int64,one-hot de neighbourhood_cleansed,explicativa: ubicacion,0
+comuna_Estación_Central,int64,one-hot de neighbourhood_cleansed,explicativa: ubicacion,0
+comuna_Huechuraba,int64,one-hot de neighbourhood_cleansed,explicativa: ubicacion,0
+comuna_Independencia,int64,one-hot de neighbourhood_cleansed,explicativa: ubicacion,0
+comuna_La_Cisterna,int64,one-hot de neighbourhood_cleansed,explicativa: ubicacion,0
+comuna_La_Florida,int64,one-hot de neighbourhood_cleansed,explicativa: ubicacion,0
+comuna_La_Granja,int64,one-hot de neighbourhood_cleansed,explicativa: ubicacion,0
+comuna_La_Reina,int64,one-hot de neighbourhood_cleansed,explicativa: ubicacion,0
+comuna_Las_Condes,int64,one-hot de neighbourhood_cleansed,explicativa: ubicacion,0
+comuna_Lo_Barnechea,int64,one-hot de neighbourhood_cleansed,explicativa: ubicacion,0
+comuna_Lo_Espejo,int64,one-hot de neighbourhood_cleansed,explicativa: ubicacion,0
+comuna_Lo_Prado,int64,one-hot de neighbourhood_cleansed,explicativa: ubicacion,0
+comuna_Macul,int64,one-hot de neighbourhood_cleansed,explicativa: ubicacion,0
+comuna_Maipú,int64,one-hot de neighbourhood_cleansed,explicativa: ubicacion,0
+comuna_Pedro_Aguirre_Cerda,int64,one-hot de neighbourhood_cleansed,explicativa: ubicacion,0
+comuna_Peñalolén,int64,one-hot de neighbourhood_cleansed,explicativa: ubicacion,0
+comuna_Providencia,int64,one-hot de neighbourhood_cleansed,explicativa: ubicacion,0
+comuna_Pudahuel,int64,one-hot de neighbourhood_cleansed,explicativa: ubicacion,0
+comuna_Quilicura,int64,one-hot de neighbourhood_cleansed,explicativa: ubicacion,0
+comuna_Quinta_Normal,int64,one-hot de neighbourhood_cleansed,explicativa: ubicacion,0
+comuna_Recoleta,int64,one-hot de neighbourhood_cleansed,explicativa: ubicacion,0
+comuna_Renca,int64,one-hot de neighbourhood_cleansed,explicativa: ubicacion,0
+comuna_San_Joaquín,int64,one-hot de neighbourhood_cleansed,explicativa: ubicacion,0
+comuna_San_Miguel,int64,one-hot de neighbourhood_cleansed,explicativa: ubicacion,0
+comuna_Santiago,int64,one-hot de neighbourhood_cleansed,explicativa: ubicacion,0
+comuna_Vitacura,int64,one-hot de neighbourhood_cleansed,explicativa: ubicacion,0
+comuna_Ñuñoa,int64,one-hot de neighbourhood_cleansed,explicativa: ubicacion,0

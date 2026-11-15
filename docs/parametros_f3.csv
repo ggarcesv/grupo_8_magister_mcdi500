@@ -1,0 +1,50 @@
+parametro,valor
+01.FiltroCategoria(room_type).valor,Entire home/apt
+01.FiltroCategoria(room_type).conservadas_en_ajuste,12273
+01.FiltroCategoria(room_type).descartadas_en_ajuste,2850
+02.SelectorColumnas(11 columnas).conservadas,11
+02.SelectorColumnas(11 columnas).descartadas,79
+03.ConvertidorMoneda(price).ya_numerica,False
+03.ConvertidorMoneda(price).no_convertibles,0
+04.AcotadorSuperior(maximum_nights).tope,1125
+04.AcotadorSuperior(maximum_nights).acotados_en_ajuste,2
+05.EliminadorNulos(2 columnas).eliminadas_en_ajuste,467
+06.ImputadorMediana(accommodates).estrategia,mediana
+06.ImputadorMediana(accommodates).valor,3.0
+06.ImputadorMediana(accommodates).nulos_en_ajuste,0
+07.ImputadorMediana(latitude).estrategia,mediana
+07.ImputadorMediana(latitude).valor,-33.43959052170767
+07.ImputadorMediana(latitude).nulos_en_ajuste,0
+08.ImputadorMediana(bedrooms).estrategia,mediana
+08.ImputadorMediana(bedrooms).valor,1.0
+08.ImputadorMediana(bedrooms).nulos_en_ajuste,2
+09.ImputadorMediana(beds).estrategia,mediana
+09.ImputadorMediana(beds).valor,2.0
+09.ImputadorMediana(beds).nulos_en_ajuste,111
+10.ImputadorMediana(minimum_nights).estrategia,mediana
+10.ImputadorMediana(minimum_nights).valor,2.0
+10.ImputadorMediana(minimum_nights).nulos_en_ajuste,5
+11.ImputadorMediana(maximum_nights).estrategia,mediana
+11.ImputadorMediana(maximum_nights).valor,365.0
+11.ImputadorMediana(maximum_nights).nulos_en_ajuste,5
+12.FiltroMaximo(price).maximo,10000000
+12.FiltroMaximo(price).eliminadas_en_ajuste,4
+13.FiltroCoherencia(bedrooms <= accommodates).eliminadas_en_ajuste,14
+14.ExtractorComodidades(amenities).indicadores,"tiene_aire_acondicionado, tiene_estacionamiento, tiene_piscina, tiene_lavadora, tiene_gimnasio, tiene_ascensor, tiene_espacio_trabajo, tiene_self_checkin"
+14.ExtractorComodidades(amenities).mediana_comodidades_en_ajuste,34.0
+15.CodificadorNominal(host_is_superhost).categorias,"f, t"
+16.CodificadorNominal(neighbourhood_cleansed).categorias,"Cerrillos, Cerro Navia, Conchalí, El Bosque, Estación Central, Huechuraba, Independencia, La Cisterna, La Florida, La Granja, La Reina, Las Condes, Lo Barnechea, Lo Espejo, Lo Prado, Macul, Maipú, Pedro Aguirre Cerda, Peñalolén, Providencia, Pudahuel, Quilicura, Quinta Normal, Recoleta, Renca, San Joaquín, San Miguel, Santiago, Vitacura, Ñuñoa"
+17.EscaladorRobusto(7 columnas).centro.accommodates,3.0
+17.EscaladorRobusto(7 columnas).centro.latitude,-33.43959
+17.EscaladorRobusto(7 columnas).centro.bedrooms,1.0
+17.EscaladorRobusto(7 columnas).centro.beds,2.0
+17.EscaladorRobusto(7 columnas).centro.minimum_nights,2.0
+17.EscaladorRobusto(7 columnas).centro.maximum_nights,365.0
+17.EscaladorRobusto(7 columnas).centro.n_comodidades,34.0
+17.EscaladorRobusto(7 columnas).escala.accommodates,2.0
+17.EscaladorRobusto(7 columnas).escala.latitude,0.029777753833343468
+17.EscaladorRobusto(7 columnas).escala.bedrooms,1.0
+17.EscaladorRobusto(7 columnas).escala.beds,2.0
+17.EscaladorRobusto(7 columnas).escala.minimum_nights,1.0
+17.EscaladorRobusto(7 columnas).escala.maximum_nights,760.0
+17.EscaladorRobusto(7 columnas).escala.n_comodidades,22.0
