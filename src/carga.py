@@ -1,21 +1,20 @@
+"""Carga del archivo crudo y verificación de su esquema.
+
+Este archivo no guarda rutas ni listas de columnas: el notebook se las
+entrega a cargar() como argumentos. Así la configuración vive en un solo lugar.
+"""
 import os
+from pathlib import Path
+
 import pandas as pd
 
-RUTA_DATOS = "data/raw/datasetairbnb.csv"
-
-
-
-COLUMNAS_ESPERADAS = ["id", "room_type", "price", "estimated_occupancy_l365d", "amenities", "accommodates",
-                     "bedrooms", "beds", "neighbourhood_cleansed", "latitude",
-                     "host_is_superhost", "minimum_nights", "maximum_nights"] 
 
 def leer_archivo(ruta):
     """Lee el archivo según su extensión y devuelve un DataFrame."""
     extension = os.path.splitext(ruta)[1].lower()
 
     if extension in (".csv", ".txt"):
-        # sep=None con engine="python" infiere el separador: útil con datos
-        # públicos chilenos, que suelen venir con punto y coma
+        # sep=None con engine="python" infiere el separador (coma o punto y coma)
         return pd.read_csv(ruta, sep=None, engine="python", encoding="utf-8")
     if extension in (".xlsx", ".xls"):
         return pd.read_excel(ruta)
@@ -40,12 +39,10 @@ def verificar_esquema(df, columnas_esperadas):
     return {"declaradas": len(columnas_esperadas),
             "en_archivo": df.shape[1],
             "no_declaradas": sobrantes}
-    
-def cargar(ruta=RUTA_DATOS, columnas_esperadas=None):
-    """Carga el archivo crudo y verifica que estén las columnas del pipeline."""
-    columnas_esperadas = columnas_esperadas or COLUMNAS_ESPERADAS
 
-    # Si el archivo no está, se detiene con un mensaje que dice qué hacer
+
+def cargar(ruta, columnas_esperadas):
+    """Carga el archivo crudo y verifica que estén las columnas del pipeline."""
     if not os.path.exists(ruta):
         raise FileNotFoundError(
             f"No se encontró el archivo: {ruta}\n"
@@ -54,17 +51,15 @@ def cargar(ruta=RUTA_DATOS, columnas_esperadas=None):
     df = leer_archivo(ruta)
     print(f"Archivo leído: {ruta}")
 
-    # Revisa que estén las 13 columnas que usa el pipeline
     informe = verificar_esquema(df, columnas_esperadas)
     print(f"Forma: {df.shape[0]} filas x {df.shape[1]} columnas")
     print(f"Esquema verificado: las {informe['declaradas']} columnas del pipeline están presentes")
     return df
 
 
-datos = cargar()
-datos.head()
-
- # Esto solo se ejecuta si corres "python src/carga.py", no al importar 
-if __name__ == "__main__": 
-     datos = cargar() 
-     print(datos.head())
+# Esto solo se ejecuta si corren "python src/carga.py" desde la raíz del proyecto.
+# Al IMPORTAR el módulo desde el notebook, este bloque NO se ejecuta.
+if __name__ == "__main__":
+    raiz = Path(__file__).resolve().parents[1]          # la carpeta superior a src/
+    datos = cargar(str(raiz / "data" / "raw" / "datasetairbnb.csv"), ["id", "price"])
+    print(datos[["id", "price"]].head())
