@@ -1,3 +1,14 @@
+import os
+import pandas as pd
+
+RUTA_DATOS = "data/raw/datasetairbnb.csv"
+
+
+
+COLUMNAS_ESPERADAS = ["id", "room_type", "price", "estimated_occupancy_l365d", "amenities", "accommodates",
+                     "bedrooms", "beds", "neighbourhood_cleansed", "latitude",
+                     "host_is_superhost", "minimum_nights", "maximum_nights"] 
+
 def leer_archivo(ruta):
     """Lee el archivo según su extensión y devuelve un DataFrame."""
     extension = os.path.splitext(ruta)[1].lower()
@@ -29,6 +40,7 @@ def verificar_esquema(df, columnas_esperadas):
     return {"declaradas": len(columnas_esperadas),
             "en_archivo": df.shape[1],
             "no_declaradas": sobrantes}
+    
 def cargar(ruta=RUTA_DATOS, columnas_esperadas=None):
     """Carga el archivo crudo y verifica que estén las columnas del pipeline."""
     columnas_esperadas = columnas_esperadas or COLUMNAS_ESPERADAS
@@ -51,3 +63,8 @@ def cargar(ruta=RUTA_DATOS, columnas_esperadas=None):
 
 datos = cargar()
 datos.head()
+
+ # Esto solo se ejecuta si corres "python src/carga.py", no al importar 
+if __name__ == "__main__": 
+     datos = cargar() 
+     print(datos.head())
