@@ -89,3 +89,5 @@ El repositorio podrá incluir datos procesados únicamente después de verificar
 Los datos son comunes a todas las fases (`data/`); los cuadernos se separan por fase.
 Semilla aleatoria fijada en 42 para asegurar reproducibilidad.
 Registro breve de las decisiones relevantes y su motivo, actualizado al cerrar cada fase.
+
+Se ha decidido trabajar en el proyecto en base a programación orientada objetos a través de la modularidad con cuatro módulos de Python dentro de /src. Como decisión de optimización, se adoptó el procesamiento vectorizado con pandas para el escalamiento de variables, obteniendo una ejecución aproximadamente 5 veces más rápida que la versión iterativa con for, aunque con un consumo de memoria un 24 % mayor. Esta arquitectura favorece la reutilización, trazabilidad y mantenimiento del código para las siguientes fases del proyecto.
