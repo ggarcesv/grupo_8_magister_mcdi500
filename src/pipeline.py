@@ -6,6 +6,7 @@ ni nombres de columna propios: todo llega por parámetro (bajo acoplamiento).
 """
 import pandas as pd
 
+from src.estrategias import PorMediana
 from src.transformadores import (
     Acotador,
     CodificadorNominal,
@@ -13,7 +14,7 @@ from src.transformadores import (
     EscaladorRobusto,
     ExtractorComodidades,
     FiltroFilas,
-    ImputadorMediana,
+    ImputadorFlexible,
     MarcadorNulos,
     SelectorColumnas,
     Transformador,
@@ -93,7 +94,9 @@ def construir_pipeline(config):
                     "objetivos sin faltantes"),
     ]
     pasos += [MarcadorNulos(c) for c in config["columnas_marcar"]]
-    pasos += [ImputadorMediana(c) for c in config["columnas_imputar"]]
+    # Patrón Strategy: la imputación delega el cálculo en la estrategia elegida
+    estrategia = config.get("estrategia_imputacion", PorMediana())
+    pasos += [ImputadorFlexible(c, estrategia) for c in config["columnas_imputar"]]
     pasos += [
         FiltroFilas("price", lambda d: ~(d["price"] > umbral), f"precio <= {umbral:,}"),
         FiltroFilas(["bedrooms", "accommodates"],

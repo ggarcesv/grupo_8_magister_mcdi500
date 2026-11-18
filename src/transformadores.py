@@ -10,6 +10,7 @@ import json
 
 import pandas as pd
 
+from src.estrategias import PorMediana
 from src.utilidades import ProyectoError
 
 # =====================================================================
@@ -90,6 +91,36 @@ class ImputadorMediana(Transformador):
 
     def aplicar(self, df):
         df[self.columna] = df[self.columna].fillna(self._parametros["mediana"])
+        return df
+
+
+class ImputadorFlexible(Transformador):
+    """Rellena los nulos con el valor que calcula su estrategia (patrón Strategy).
+
+    No sabe imputar: sabe cuándo. El cómo lo aporta la estrategia que recibe
+    (PorMediana, PorMedia o PorMedianaDeGrupo, en src/estrategias.py).
+    """
+
+    def __init__(self, columna, estrategia=None):
+        super().__init__(columna)
+        self.estrategia = estrategia or PorMediana()
+
+    def aprender(self, df):
+        return {"estrategia": self.estrategia.etiqueta,
+                "valor": self.estrategia.calcular(df, self.columna),
+                # Respaldo para grupos que no existían en el ajuste: también se
+                # aprende aquí, para no calcular nada con los datos que se transforman
+                "respaldo": float(df[self.columna].median()),
+                "nulos_en_ajuste": int(df[self.columna].isna().sum())}
+
+    def aplicar(self, df):
+        valor = self._parametros["valor"]
+        if isinstance(valor, dict):                       # mediana por grupo
+            relleno = df[self.estrategia.columna_grupo].map(valor)
+            df[self.columna] = df[self.columna].fillna(relleno)
+        else:
+            df[self.columna] = df[self.columna].fillna(valor)
+        df[self.columna] = df[self.columna].fillna(self._parametros["respaldo"])
         return df
 
 
