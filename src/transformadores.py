@@ -10,6 +10,7 @@ import json
 
 import pandas as pd
 
+from src.utilidades import ProyectoError
 
 # =====================================================================
 # Clase base
@@ -241,8 +242,20 @@ class ExtractorComodidades(Transformador):
     def aprender(self, df):
         return {"indicadores": list(self.patrones)}
 
+    def _leer_lista(self, texto, indice):
+        """Convierte el texto JSON de una fila en lista; si falla, dice qué fila."""
+        try:
+            return json.loads(texto)
+        except (json.JSONDecodeError, TypeError) as error:
+            raise ProyectoError(
+                f"{self.nombre}: la fila con índice {indice} tiene '{self.columna}' "
+                f"mal formado: {str(texto)[:60]!r}"
+            ) from error
+
     def aplicar(self, df):
-        listas = df[self.columna].apply(json.loads)               # texto -> lista real
+        # Texto -> lista real, fila por fila; si una fila está mal formada, se informa cuál
+        listas = pd.Series([self._leer_lista(t, i) for i, t in df[self.columna].items()],
+                           index=df.index)
         texto = listas.apply(lambda lista: "|".join(lista).lower())
         df["n_comodidades"] = listas.str.len()
         for nueva, patron in self.patrones.items():
