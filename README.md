@@ -25,6 +25,14 @@ src/             módulos reutilizables del proyecto
 F1/ F2/ F3/ F4/  cuadernos e informes de cada fase
 ```
 
+## Módulos
+```
+src/carga.py: lectura de archivos externos y validación estricta de esquema. 
+src/transformadores.py: definición de la clase base abstracta Transformador, sus diez clases hijas de limpieza/transformación y la excepción personalizada del dominio (ProyectoError). 
+src/pipeline.py: orquestación secuencial mediante Pipeline y construcción parametrizada desde construir_pipeline(config). 
+src/medicion.py: perfilado reproducible de tiempo de ejecución (timeit) y consumo de memoria pico (tracemalloc). 
+```
+
 ## Requisitos y ejecución
 Se utiliza Python 3.13 como versión de referencia del proyecto.
 
@@ -71,7 +79,7 @@ Asegurar que el data set descargado corresponda a la captura del 23 de septiembr
 - jupyterlab
 - notebook
 - numpy==2.5.4
-- pandas==3.1.0
+- pandas==3.1.1
 
 ## Convención de commits
 Prefijos usados: 
@@ -81,7 +89,8 @@ Prefijos usados:
 - fix: corregir errores o problemas
 
 ## Decisiones técnicas
- El archivo original contiene información potencialmente identificable de los anfitriones, como nombres, descripciones y enlaces a perfiles. Por esta razón, no se distribuye ni versiona en este repositorio.
+
+El archivo original contiene información potencialmente identificable de los anfitriones, como nombres, descripciones y enlaces a perfiles. Por esta razón, no se distribuye ni versiona en este repositorio.
 La carpeta data/raw/ está excluida del seguimiento de Git mediante .gitignore. Cada usuario debe obtener el dataset desde la fuente original y conservarlo localmente.
 La ejecución de F1 requiere que el archivo esté disponible en la ubicación y con el nombre especificados, ya que las auditorías del diccionario de variables y las comprobaciones de calidad leen directamente sus contenidos.
 Se debe utilizar la versión correspondiente a la captura documentada, porque otras versiones pueden presentar diferencias en la cantidad de registros, las variables y sus valores.
