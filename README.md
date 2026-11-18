@@ -39,17 +39,17 @@ Se utiliza Python 3.13 como versión de referencia del proyecto.
 Para preparar el entorno virtual desde la raíz del repositorio:
 
 Windows — PowerShell
-
+```
 py -3.13 -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install -r requirements.txt
-
+```
 macOS o Linux
-
+```
 python3.13 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements.txt
-
+```
 Las dependencias y sus versiones se especifican en requirements.txt, que debe mantenerse compatible con los sistemas operativos utilizados por los integrantes y evaluadores.
 
 ## Instrucciones para reproducir el proyecto
@@ -91,11 +91,15 @@ Prefijos usados:
 ## Decisiones técnicas
 
 El archivo original contiene información potencialmente identificable de los anfitriones, como nombres, descripciones y enlaces a perfiles. Por esta razón, no se distribuye ni versiona en este repositorio.
+
 La carpeta data/raw/ está excluida del seguimiento de Git mediante .gitignore. Cada usuario debe obtener el dataset desde la fuente original y conservarlo localmente.
+
 La ejecución de F1 requiere que el archivo esté disponible en la ubicación y con el nombre especificados, ya que las auditorías del diccionario de variables y las comprobaciones de calidad leen directamente sus contenidos.
 Se debe utilizar la versión correspondiente a la captura documentada, porque otras versiones pueden presentar diferencias en la cantidad de registros, las variables y sus valores.
+
 El repositorio podrá incluir datos procesados únicamente después de verificar que no contengan información personal identificable.
 Los datos son comunes a todas las fases (`data/`); los cuadernos se separan por fase.
+
 Semilla aleatoria fijada en 42 para asegurar reproducibilidad.
 Registro breve de las decisiones relevantes y su motivo, actualizado al cerrar cada fase.
 
