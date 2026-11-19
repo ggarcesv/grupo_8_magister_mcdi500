@@ -7,7 +7,7 @@ import re
 
 
 class ProyectoError(Exception):
-    """Error propio del proyecto: permite distinguirlo de los de las librerias."""
+    """Error propio del proyecto: permite distinguirlo de las librerias."""
 
 
 def normalizar_nombre(texto):
