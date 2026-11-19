@@ -17,6 +17,7 @@ El análisis tendrá un enfoque descriptivo y exploratorio. No pretende establec
 - Enlace: https://data.insideairbnb.com/chile/rm/santiago/2026-09-23/data/listings.csv.gz
 - Estructura: 18904 filas × 90 columnas
 - Ubicación esperada: `data/raw/datasetairbnb.csv`
+- La integridad del dataset original se realiza mediante algoritmo SHA-256, Huella SHA-256: CF7BC651740CAB3B29B5BF069728E36FA9A33E0306BBFF4DEDD84A42D6389FC4 
 
 ## Estructura del repositorio
 
