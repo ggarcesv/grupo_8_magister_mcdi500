@@ -1,0 +1,91 @@
+variable,tipo_detectado,nulos,porcentaje_nulos,valores_unicos,estado_datos,rol_analitico,descripcion,observacion_auditoria,fuente_estadisticas,estado_revision
+id,int64,0,0.0,18904,con_datos,identificador,Identificador único del anuncio en Airbnb.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+listing_url,str,0,0.0,18904,con_datos,identificador,Dirección URL pública del anuncio.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+scrape_id,int64,0,0.0,1,con_datos,identificador,Identificador del proceso de extracción de Inside Airbnb.,Identificador de extracción; valor constante.,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+last_scraped,str,0,0.0,2,con_datos,fecha,Fecha en que se extrajo la información del anuncio.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+source,str,18041,95.43,1,con_datos,nominal,Procedencia del registro dentro del proceso de recopilación.,Una categoría observada y alta proporción de nulos.,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+name,str,0,0.0,18112,con_datos,texto libre,Título publicado para el alojamiento.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+description,str,118,0.62,16671,con_datos,texto libre,Descripción textual del alojamiento.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+neighborhood_overview,float64,18904,100.0,0,sin_datos,texto libre,Descripción del entorno o barrio redactada para el anuncio.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+picture_url,str,0,0.0,18568,con_datos,identificador,Enlace a la imagen principal del anuncio.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+host_id,int64,0,0.0,9920,con_datos,identificador,Identificador único del anfitrión de Airbnb.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+host_url,str,0,0.0,9920,con_datos,identificador,Enlace al perfil público del anfitrión.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+host_profile_id,int64,0,0.0,9920,con_datos,identificador,Identificador del perfil del anfitrión informado en este archivo.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+host_profile_url,str,0,0.0,9920,con_datos,identificador,Enlace al perfil de anfitrión informado en este archivo.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+host_name,str,0,0.0,3268,con_datos,nominal,Nombre público del anfitrión.,Nominal de alta cardinalidad.,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+host_since,float64,18904,100.0,0,sin_datos,fecha,Fecha desde la cual la persona figura como anfitriona en Airbnb.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+hosts_time_as_user_years,int64,0,0.0,18,con_datos,discreta,Años de antigüedad del anfitrión como usuario de la plataforma.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+hosts_time_as_user_months,int64,0,0.0,12,con_datos,discreta,Meses de antigüedad del anfitrión como usuario de la plataforma.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+hosts_time_as_host_years,int64,0,0.0,16,con_datos,discreta,Años de antigüedad como anfitrión.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+hosts_time_as_host_months,int64,0,0.0,12,con_datos,discreta,Meses de antigüedad como anfitrión.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+host_location,str,6136,32.46,320,con_datos,nominal,Ubicación declarada por el anfitrión.,Nominal de alta cardinalidad.,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+host_about,str,9698,51.3,4035,con_datos,texto libre,Descripción o biografía publicada por el anfitrión.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+host_response_time,float64,18904,100.0,0,sin_datos,ordinal,"Tiempo habitual de respuesta a consultas, por categorías.",,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+host_response_rate,float64,18904,100.0,0,sin_datos,continua,Porcentaje de consultas respondidas por el anfitrión.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+host_acceptance_rate,float64,18904,100.0,0,sin_datos,continua,Porcentaje de solicitudes aceptadas por el anfitrión.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+host_is_superhost,str,0,0.0,2,con_datos,binaria,Indica si el anfitrión tiene categoría Superhost (t/f).,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+host_thumbnail_url,float64,18904,100.0,0,sin_datos,alta cardinalidad,URL de la miniatura de la foto del anfitrión.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+host_picture_url,str,0,0.0,9263,con_datos,identificador,URL de la imagen del anfitrión.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+host_neighbourhood,float64,18904,100.0,0,sin_datos,nominal,Barrio declarado por el anfitrión.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+host_listings_count,int64,0,0.0,73,con_datos,discreta,Número de anuncios asociados al anfitrión según la plataforma.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+host_total_listings_count,float64,18904,100.0,0,sin_datos,discreta,Número total de anuncios del anfitrión según la plataforma.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+host_verifications,float64,18904,100.0,0,sin_datos,alta cardinalidad,Verificaciones declaradas para el anfitrión.,Sin datos; significado pendiente de contrastar.,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+host_has_profile_pic,str,0,0.0,2,con_datos,binaria,Indica si el perfil del anfitrión tiene foto (t/f).,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+host_identity_verified,str,0,0.0,2,con_datos,binaria,Indica si Airbnb declara verificada la identidad del anfitrión (t/f).,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+neighbourhood,float64,18904,100.0,0,sin_datos,nominal,Nombre del barrio o ubicación informado directamente en el anuncio.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+neighbourhood_cleansed,str,0,0.0,32,con_datos,nominal,Nombre del sector territorial obtenido por geocodificación de las coordenadas del anuncio.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+neighbourhood_group_cleansed,float64,18904,100.0,0,sin_datos,nominal,Agrupación territorial superior normalizada.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+latitude,float64,0,0.0,12384,con_datos,continua,Latitud geográfica del alojamiento.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+longitude,float64,0,0.0,13146,con_datos,continua,Longitud geográfica del alojamiento.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+property_type,str,0,0.0,70,con_datos,nominal,"Tipo de propiedad que se ofrece (departamento, casa u otro).",,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+room_type,str,0,0.0,4,con_datos,nominal,"Modalidad de alojamiento (entero, habitación privada, compartida, etc.).",,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+accommodates,int64,0,0.0,16,con_datos,discreta,Cantidad máxima de huéspedes que puede alojar el anuncio.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+bathrooms,float64,18904,100.0,0,sin_datos,continua,Número de baños informado para el alojamiento.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+bathrooms_text,str,14,0.07,47,con_datos,nominal,Descripción textual del número y tipo de baño.,Categorías que incluyen cantidades y modalidad del baño.,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+bedrooms,float64,5,0.03,21,con_datos,discreta,Número de dormitorios del alojamiento.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+beds,float64,203,1.07,25,con_datos,discreta,Número de camas ofrecidas.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+amenities,str,0,0.0,17712,con_datos,texto libre,Lista de servicios y comodidades declaradas por el anfitrión.,Contiene listas representadas como texto.,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+price,str,898,4.75,10084,con_datos,continua,"Precio diario publicado del alojamiento, según el formato monetario del dataset.",,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+price_quote_checkin_date,str,579,3.06,249,con_datos,fecha,Fecha de entrada asociada a la cotización de precio.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+price_quote_checkout_date,str,579,3.06,281,con_datos,fecha,Fecha de salida asociada a la cotización de precio.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+price_quote_total_price,float64,898,4.75,10235,con_datos,continua,Monto total reportado para una cotización de alojamiento.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+price_quote_price_per_night,float64,898,4.75,10084,con_datos,continua,Monto por noche reportado para la cotización.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+price_quote_raw,str,579,3.06,15321,con_datos,texto libre,Contenido original o respuesta sin procesar de la cotización.,Contiene información estructurada similar a JSON.,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+minimum_nights,float64,5,0.03,55,con_datos,discreta,Número mínimo de noches exigido para reservar.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+maximum_nights,float64,5,0.03,128,con_datos,discreta,Número máximo de noches permitido para reservar.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+minimum_minimum_nights,float64,5,0.03,55,con_datos,discreta,Menor mínimo de noches observado en el calendario disponible.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+maximum_minimum_nights,float64,5,0.03,62,con_datos,discreta,Mayor mínimo de noches observado en el calendario disponible.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+minimum_maximum_nights,float64,5,0.03,128,con_datos,discreta,Menor máximo de noches permitido entre períodos del calendario.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+maximum_maximum_nights,float64,5,0.03,128,con_datos,discreta,Mayor máximo de noches permitido entre períodos del calendario.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+minimum_nights_avg_ntm,float64,0,0.0,177,con_datos,continua,Promedio del mínimo de noches requerido en próximos meses.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+maximum_nights_avg_ntm,float64,0,0.0,283,con_datos,continua,Promedio del máximo de noches permitido en próximos meses.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+calendar_updated,float64,18904,100.0,0,sin_datos,fecha,Fecha de actualización del calendario del alojamiento.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+has_availability,str,204,1.08,1,con_datos,binaria,Indicador de disponibilidad declarada en el calendario.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+availability_30,int64,0,0.0,31,con_datos,discreta,Días disponibles en el calendario de los próximos 30 días.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+availability_60,int64,0,0.0,61,con_datos,discreta,Días disponibles en el calendario de los próximos 60 días.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+availability_90,int64,0,0.0,91,con_datos,discreta,Días disponibles en el calendario de los próximos 90 días.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+availability_365,int64,0,0.0,366,con_datos,discreta,Días disponibles en el calendario de los próximos 365 días.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+calendar_last_scraped,str,0,0.0,2,con_datos,fecha,Fecha de la última extracción del calendario de disponibilidad.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+number_of_reviews,int64,0,0.0,449,con_datos,discreta,Cantidad acumulada de reseñas del anuncio.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+number_of_reviews_ltm,int64,0,0.0,151,con_datos,discreta,Reseñas recibidas durante los últimos 12 meses.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+number_of_reviews_l30d,int64,0,0.0,20,con_datos,discreta,Reseñas recibidas durante los últimos 30 días.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+availability_eoy,int64,0,0.0,99,con_datos,discreta,Días disponibles hasta fin de año según la extracción.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+number_of_reviews_ly,int64,0,0.0,146,con_datos,discreta,Reseñas contabilizadas en el año anterior según el archivo.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+estimated_occupancy_l365d,int64,0,0.0,88,con_datos,discreta,Estimación de noches ocupadas en los últimos 365 días.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+estimated_revenue_l365d,float64,898,4.75,10901,con_datos,continua,Estimación de ingresos del alojamiento en los últimos 365 días.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+first_review,str,2869,15.18,3067,con_datos,fecha,Fecha de la primera reseña recibida por el anuncio.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+last_review,str,2869,15.18,1329,con_datos,fecha,Fecha de la reseña más reciente del anuncio.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+review_scores_rating,float64,2869,15.18,139,con_datos,continua,Calificación global publicada del alojamiento.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+review_scores_accuracy,float64,2869,15.18,134,con_datos,continua,Calificación de precisión de la descripción del anuncio.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+review_scores_cleanliness,float64,2869,15.18,149,con_datos,continua,Calificación de limpieza.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+review_scores_checkin,float64,2869,15.18,112,con_datos,continua,Calificación del proceso de llegada o check-in.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+review_scores_communication,float64,2869,15.18,129,con_datos,continua,Calificación de comunicación con el anfitrión.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+review_scores_location,float64,2870,15.18,131,con_datos,continua,Calificación de ubicación otorgada por huéspedes.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+review_scores_value,float64,2869,15.18,136,con_datos,continua,Calificación de relación calidad-precio según huéspedes.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+license,str,18735,99.11,123,con_datos,identificador,Información de licencia o registro del alojamiento.,Posible identificador; requiere confirmación documental.,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+instant_bookable,float64,18904,100.0,0,sin_datos,binaria,Permite identificar si existe reserva inmediata habilitada.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+calculated_host_listings_count,int64,0,0.0,54,con_datos,discreta,"Cantidad de anuncios del anfitrión en la ciudad o región, calculada por Inside Airbnb.",,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+calculated_host_listings_count_entire_homes,int64,0,0.0,54,con_datos,discreta,Anuncios de alojamientos enteros asociados al anfitrión.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+calculated_host_listings_count_private_rooms,int64,0,0.0,19,con_datos,discreta,Anuncios de habitaciones privadas asociados al anfitrión.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+calculated_host_listings_count_shared_rooms,int64,0,0.0,5,con_datos,discreta,Anuncios de habitaciones compartidas asociados al anfitrión.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
+reviews_per_month,float64,2869,15.18,1015,con_datos,continua,Promedio de reseñas por mes durante la vida del anuncio.,,data/raw/datasetairbnb.csv,Clasificación preliminar; revisión documental pendiente
