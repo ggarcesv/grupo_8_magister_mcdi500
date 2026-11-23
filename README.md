@@ -46,15 +46,16 @@ requirements.txt    dependencias con versiones fijas
 
 ## Módulos  de `src/`
 
+|Módulo|Responsabilidad|
+|-|-|
+|`carga.py`|Lectura del CSV y validación estricta del esquema|
+|`transformadores.py`|Clase base `Transformador` y sus once clases hijas de limpieza y transformación|
+|`estrategias.py`|Patrón Strategy para la imputación: `EstrategiaImputacion`, `PorMediana`, `PorMedia`, `PorMedianaDeGrupo`|
+|`pipeline.py`|Clase `Pipeline` que encadena los pasos y `construir\_pipeline(config)` que los crea desde la configuración|
+|`medicion.py`|Medición reproducible de tiempo (`timeit`) y memoria pico (`tracemalloc`)|
+|`comunicacion.py`|Copia interpretable (inversa del escalamiento), intervalos de Wilson y guardado de figuras|
+|`utilidades.py`|Normalización de nombres de columnas (`normalizar\_nombre()`, `normalizar\_columnas()`) y excepción del dominio `ProyectoError`
 
-```
-src/carga.py: lectura de archivos externos y validación estricta de esquema. 
-src/transformadores.py: definición de la clase base abstracta Transformador, sus diez clases hijas de limpieza/transformación y la excepción personalizada del dominio (ProyectoError). 
-src/pipeline.py: orquestación secuencial mediante Pipeline y construcción parametrizada desde construir_pipeline(config). 
-src/medicion.py: perfilado reproducible de tiempo de ejecución (timeit) y consumo de memoria pico (tracemalloc).
-src/estrategias.py: implementación del patrón Strategy para imputación de nulos mediante clases intercambiables (EstrategiaImputacion, PorMediana, PorMedia, PorMedianaDeGrupo).
-src/utilidades.py: utilidades transversales generadas desde la Fase 1 para estandarizar nombres de columnas sin duplicados (normalizar_nombre(), normalizar_columnas()) y definir la excepción personalizada del dominio (ProyectoError).
-```
 
 ## Requisitos y ejecución
 
