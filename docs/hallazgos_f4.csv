@@ -1,0 +1,9 @@
+seccion,figura,hallazgo,evidencia
+3.1,-,Precio y ocupación medianos,$60.000 por noche; 60 noches al año
+3.1,anexo1_distribuciones,Ocupación con ceros y tope,"17,6 % con 0 noches; 10,5 % en el tope de 255"
+Figura 1,fig1_ubicacion,La comuna más cara no es la más ocupada,Lo Barnechea: $391.834 y 32 noches; Providencia: $72.550 y 108 noches
+Figura 2,fig2_capacidad,El precio sube con la capacidad y la ocupación baja,2 huéspedes: $49.767 y 84 noches; 9 o más: $422.367 y 30 noches
+Figura 3,fig3_comodidades,"Más comodidades, más ocupación, también dentro de cada comuna",De 42 a 108 noches; ocupación 0 de 39 % a 8 %
+Figura 4,fig4_sintesis,Mayor ocupación: pocos huéspedes y muchas comodidades,Máximo 120 noches; mínimo 20 noches
+Figura 4,-,Más ocupación no significa más ingreso,Ingreso anual estimado: $2.992.179 (1 a 2 huéspedes) frente a $8.478.456 (7 o más)
+3.5,-,Los patrones se repiten en entrenamiento y prueba,"Spearman entre 0,88 y 1,00"

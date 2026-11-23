@@ -1,0 +1,29 @@
+{
+  "fase": "F4",
+  "fecha_ejecucion": "2026-11-22",
+  "semilla": 42,
+  "python": "3.13.16",
+  "dependencias": {
+    "numpy": "2.5.4",
+    "pandas": "3.1.1",
+    "matplotlib": "3.11.2"
+  },
+  "entradas": [
+    "data\\processed\\diccionario_f3.csv",
+    "data\\processed\\entrenamiento_f3.csv",
+    "data\\processed\\parametros_f3.csv",
+    "data\\processed\\prueba_f3.csv"
+  ],
+  "figuras": [
+    "F4\\figuras\\fig1_ubicacion.png",
+    "F4\\figuras\\fig2_capacidad.png",
+    "F4\\figuras\\fig3_comodidades.png",
+    "F4\\figuras\\fig4_sintesis.png",
+    "F4\\figuras\\anexo1_ocupacion_activa.png",
+    "F4\\figuras\\anexo2_tramo_precio.png",
+    "F4\\figuras\\anexo3_comodidades_por_anfitrion.png",
+    "F4\\figuras\\anexo4_capacidad.png",
+    "F4\\figuras\\anexo5_dormitorios_por_precio.png"
+  ],
+  "controles_superados": 9
+}
