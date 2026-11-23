@@ -59,6 +59,7 @@ requirements.txt    dependencias con versiones fijas
 
 ## Requisitos y ejecución
 
+
 Se utiliza Python 3.13 como versión de referencia del proyecto.
 
 Para preparar el entorno virtual desde la raíz del repositorio:
@@ -81,28 +82,6 @@ python -m pip install -r requirements.txt
 
 Las dependencias y sus versiones se especifican en requirements.txt, que debe mantenerse compatible con los sistemas operativos utilizados por los integrantes y evaluadores.
 
-## Instrucciones para reproducir el proyecto
-
-Clonar el repositorio de GitHub.
-
-Crear el entorno virtual e instalar las dependencias indicadas en requirements.txt.
-
-Descargar el archivo listings.csv.gz desde el enlace indicado.
-
-Descomprimir el archivo para obtener listings.csv.
-
-Renombrar el archivo descomprimido como datasetairbnb.csv.
-
-Guardarlo en la carpeta data/raw/ del repositorio.
-
-Ejecutar los notebooks oficiales, comenzando por F1 y posteriormente F2.
-
-La ruta esperada por los notebooks es:
-
-data/raw/datasetairbnb.csv
-
-Asegurar que el data set descargado corresponda a la captura del 23 de septiembre de 2026, versiones distintas a esta pueden poseer otras características que no son contempladas para la ejecución de este proyecto.
-
 ### Dependencias declaradas
 
 - ipykernel
@@ -110,6 +89,18 @@ Asegurar que el data set descargado corresponda a la captura del 23 de septiembr
 - notebook
 - numpy==2.5.4
 - pandas==3.1.1
+
+## Instrucciones para reproducir el proyecto
+
+1. Clonar el repositorio.
+2. Crear el entorno virtual e instalar las dependencias indicadas en requirements.txt.
+3. Descargar el archivo listings.csv.gz desde el enlace indicado, descomprimirlo y guardar el archivo como `data/raw/datasetairbnb.csv`.
+4. Abrir Jupyter Lab o VSCode con el kernel del entorno virtual.
+5. Ejecutar los notebooks en orden **F1 → F2 → F3 → F4**, cada uno con *Restart Kernel and Run All*. Cada notebook comprueba que se ejecuta dentro del entorno virtual, y F4 se detiene con un mensaje claro si faltan los artefactos de F3.
+
+
+Usen solo la captura del 23 de septiembre de 2026: otras versiones pueden tener otra cantidad de registros, otras variables y otros valores. Si la huella SHA-256 no coincide, el notebook lo informa.
+
 
 ## Convención de commits
 
@@ -122,17 +113,11 @@ Prefijos usados:
 
 ## Decisiones técnicas
 
-El archivo original contiene información potencialmente identificable de los anfitriones, como nombres, descripciones y enlaces a perfiles. Por esta razón, no se distribuye ni versiona en este repositorio.
+* **Datos originales fuera de Git.** El archivo contiene información potencialmente identificable de los anfitriones (nombres, descripciones y enlaces a perfiles). Por eso `data/raw/` está excluida mediante `.gitignore` y cada integrante descarga el archivo desde la fuente. Solo se versionan datos procesados que no contienen información personal.
+* **Alcance.** Se analizan solo alojamientos completos (*Entire home/apt*): 15.383 anuncios, que quedan en 14.758 tras la limpieza.
+* **Reproducibilidad.** Semilla aleatoria fija (42) y partición entrenamiento/prueba 80/20 sin fuga de datos.
+* **Clases donde se aprende algo de los datos.** Los pasos que aprenden parámetros del entrenamiento son clases con un contrato común (`ajustar()` / `transformar()`). Las operaciones que no aprenden nada son funciones.
+* **Patrón Strategy en la imputación.** Permite cambiar entre mediana, media y mediana por grupo sin reescribir el imputador. Se eligió la mediana: las tres estrategias cambian la desviación de `beds` en menos de 1 % y la mediana es la más simple y coherente con la asimetría de los datos.
+* **Vectorización.** El escalamiento vectorizado es 41,1 veces más rápido que el bucle `for` y usa 0,18 veces su memoria. Una medición anterior registraba un 24 % más de memoria, pero esa cifra medía una conversión a lista y no el escalador, y se corrigió en F3.
+* **Extractor de comodidades.** Es el paso más costoso del pipeline (82 % del tiempo). Se mantiene la versión con `json` porque detecta filas mal formadas, aunque usa más memoria que la versión sin `json`.
 
-La carpeta data/raw/ está excluida del seguimiento de Git mediante .gitignore. Cada usuario debe obtener el dataset desde la fuente original y conservarlo localmente.
-
-La ejecución de F1 requiere que el archivo esté disponible en la ubicación y con el nombre especificados, ya que las auditorías del diccionario de variables y las comprobaciones de calidad leen directamente sus contenidos.
-Se debe utilizar la versión correspondiente a la captura documentada, porque otras versiones pueden presentar diferencias en la cantidad de registros, las variables y sus valores.
-
-El repositorio podrá incluir datos procesados únicamente después de verificar que no contengan información personal identificable.
-Los datos son comunes a todas las fases (`data/`); los cuadernos se separan por fase.
-
-Semilla aleatoria fijada en 42 para asegurar reproducibilidad.
-Registro breve de las decisiones relevantes y su motivo, actualizado al cerrar cada fase.
-
-Se ha decidido trabajar en el proyecto en base a programación orientada objetos a través de la modularidad con cuatro módulos de Python dentro de /src. Como decisión de optimización, se adoptó el procesamiento vectorizado con pandas para el escalamiento de variables, obteniendo una ejecución aproximadamente 5 veces más rápida que la versión iterativa con for, aunque con un consumo de memoria un 24 % mayor. Esta arquitectura favorece la reutilización, trazabilidad y mantenimiento del código para las siguientes fases del proyecto.
