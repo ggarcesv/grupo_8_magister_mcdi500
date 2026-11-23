@@ -29,6 +29,7 @@ data/raw/           datos originales, sin modificar (excluidos de Git)
 data/processed/     artefactos de F2 y F3 (dataset procesado, partición y parámetros)
 docs/               diccionario de variables, metadatos, validación del dataset y hallazgos de F4
 src/                módulos reutilizables del proyecto
+tests/              pruebas unitarias con pytest (no requieren data/raw)
 F1/ F2/ F3/ F4/     notebook de cada fase
 F4/figuras/         figuras finales exportadas por el notebook F4
 requirements.txt    dependencias con versiones fijas
@@ -84,11 +85,15 @@ Las dependencias y sus versiones se especifican en requirements.txt, que debe ma
 
 ### Dependencias declaradas
 
-- ipykernel
-- jupyterlab
-- notebook
+- ipykernel==7.4.0
+- ipython==9.18.1
+- jupyterlab==4.6.5
+- matplotlib==3.11.2
+- notebook==7.6.4
 - numpy==2.5.4
 - pandas==3.1.1
+- pytest==9.1.1
+- scikit-learn==1.9.1
 
 ## Instrucciones para reproducir el proyecto
 
