@@ -13,34 +13,52 @@ El análisis tendrá un enfoque descriptivo y exploratorio. No pretende establec
 
 ## Datos
 
-- Fuente: [Inside Airbnb]
-- Enlace: https://data.insideairbnb.com/chile/rm/santiago/2026-09-23/data/listings.csv.gz
-- Estructura: 18904 filas × 90 columnas
-- Ubicación esperada: `data/raw/datasetairbnb.csv`
-- La integridad del dataset original se realiza mediante algoritmo SHA-256, Huella SHA-256: CF7BC651740CAB3B29B5BF069728E36FA9A33E0306BBFF4DEDD84A42D6389FC4 
+* Fuente: [Inside Airbnb](https://insideairbnb.com/)
+* Enlace: https://data.insideairbnb.com/chile/rm/santiago/2026-09-23/data/listings.csv.gz
+* Captura: 23 de septiembre de 2026
+* Estructura: 18904 filas × 90 columnas
+* Ubicación esperada: `data/raw/datasetairbnb.csv`
+* Integridad: el archivo se verifica con su huella SHA-256: CF7BC651740CAB3B29B5BF069728E36FA9A33E0306BBFF4DEDD84A42D6389FC4 
+
+
 
 ## Estructura del repositorio
 
 ```
-data/raw/        datos originales, sin modificar
-data/processed/  datos tras limpieza y transformación (F2)
-docs/            diccionario, fichas y metadatos
-src/             módulos reutilizables del proyecto
-F1/ F2/ F3/ F4/  cuadernos e informes de cada fase
+data/raw/           datos originales, sin modificar (excluidos de Git)
+data/processed/     artefactos de F2 y F3 (dataset procesado, partición y parámetros)
+docs/               diccionario de variables, metadatos, validación del dataset y hallazgos de F4
+src/                módulos reutilizables del proyecto
+F1/ F2/ F3/ F4/     notebook de cada fase
+F4/figuras/         figuras finales exportadas por el notebook F4
+requirements.txt    dependencias con versiones fijas
 ```
 
-## Módulos
+## Fases
 
-```
-src/carga.py: lectura de archivos externos y validación estricta de esquema. 
-src/transformadores.py: definición de la clase base abstracta Transformador, sus diez clases hijas de limpieza/transformación y la excepción personalizada del dominio (ProyectoError). 
-src/pipeline.py: orquestación secuencial mediante Pipeline y construcción parametrizada desde construir_pipeline(config). 
-src/medicion.py: perfilado reproducible de tiempo de ejecución (timeit) y consumo de memoria pico (tracemalloc).
-src/estrategias.py: implementación del patrón Strategy para imputación de nulos mediante clases intercambiables (EstrategiaImputacion, PorMediana, PorMedia, PorMedianaDeGrupo).
-src/utilidades.py: utilidades transversales generadas desde la Fase 1 para estandarizar nombres de columnas sin duplicados (normalizar_nombre(), normalizar_columnas()) y definir la excepción personalizada del dominio (ProyectoError).
-```
+|Fase|Notebook|Entrega a la fase siguiente|
+|-|-|-|
+|F1 - Definición|Problema y objetivos, entorno, procedencia y huella del dataset|Ficha del dataset y metadatos|
+|F2 - Preprocesamiento|Exploración, limpieza, imputación comparada, comodidades y One-Hot|`airbnb\_procesado.csv` (14.758 × 50)|
+|F3 - Núcleo algorítmico|Clases, pipeline, validación contra F2, recursividad, eficiencia y patrón Strategy|Cuatro artefactos en `data\processed/`|
+|F4 - Comunicación|Copia interpretable verificada, figuras, eficiencia y validación|Figuras en `F4\figuras\` y `docs\hallazgos\_f4.csv`|
+
+
+## Módulos  de `src/`
+
+|Módulo|Responsabilidad|
+|-|-|
+|carga.py|Lectura del CSV y validación estricta del esquema|
+|transformadores.py|Clase base `Transformador` y sus once clases hijas de limpieza y transformación|
+|estrategias.py|Patrón Strategy para la imputación: `EstrategiaImputacion`, `PorMediana`, `PorMedia`, `PorMedianaDeGrupo`|
+|pipeline.py|Clase `Pipeline` que encadena los pasos y `construir\_pipeline(config)` que los crea desde la configuración|
+|medicion.py|Medición reproducible de tiempo (`timeit`) y memoria pico (`tracemalloc`)|
+|comunicacion.py|Copia interpretable (inversa del escalamiento), intervalos de Wilson y guardado de figuras|
+|utilidades.py|Normalización de nombres de columnas (`normalizar\_nombre()`, `normalizar\_columnas()`) y excepción del dominio `ProyectoError`
+
 
 ## Requisitos y ejecución
+
 
 Se utiliza Python 3.13 como versión de referencia del proyecto.
 
@@ -64,28 +82,6 @@ python -m pip install -r requirements.txt
 
 Las dependencias y sus versiones se especifican en requirements.txt, que debe mantenerse compatible con los sistemas operativos utilizados por los integrantes y evaluadores.
 
-## Instrucciones para reproducir el proyecto
-
-Clonar el repositorio de GitHub.
-
-Crear el entorno virtual e instalar las dependencias indicadas en requirements.txt.
-
-Descargar el archivo listings.csv.gz desde el enlace indicado.
-
-Descomprimir el archivo para obtener listings.csv.
-
-Renombrar el archivo descomprimido como datasetairbnb.csv.
-
-Guardarlo en la carpeta data/raw/ del repositorio.
-
-Ejecutar los notebooks oficiales, comenzando por F1 y posteriormente F2.
-
-La ruta esperada por los notebooks es:
-
-data/raw/datasetairbnb.csv
-
-Asegurar que el data set descargado corresponda a la captura del 23 de septiembre de 2026, versiones distintas a esta pueden poseer otras características que no son contempladas para la ejecución de este proyecto.
-
 ### Dependencias declaradas
 
 - ipykernel
@@ -93,6 +89,18 @@ Asegurar que el data set descargado corresponda a la captura del 23 de septiembr
 - notebook
 - numpy==2.5.4
 - pandas==3.1.1
+
+## Instrucciones para reproducir el proyecto
+
+1. Clonar el repositorio.
+2. Crear el entorno virtual e instalar las dependencias indicadas en requirements.txt.
+3. Descargar el archivo listings.csv.gz desde el enlace indicado, descomprimirlo y guardar el archivo como `data/raw/datasetairbnb.csv`.
+4. Abrir Jupyter Lab o VSCode con el kernel del entorno virtual.
+5. Ejecutar los notebooks en orden **F1 → F2 → F3 → F4**, cada uno con *Restart Kernel and Run All*. Cada notebook comprueba que se ejecuta dentro del entorno virtual, y F4 se detiene con un mensaje claro si faltan los artefactos de F3.
+
+
+Usen solo la captura del 23 de septiembre de 2026: otras versiones pueden tener otra cantidad de registros, otras variables y otros valores. Si la huella SHA-256 no coincide, el notebook lo informa.
+
 
 ## Convención de commits
 
@@ -105,17 +113,11 @@ Prefijos usados:
 
 ## Decisiones técnicas
 
-El archivo original contiene información potencialmente identificable de los anfitriones, como nombres, descripciones y enlaces a perfiles. Por esta razón, no se distribuye ni versiona en este repositorio.
+* **Datos originales fuera de Git.** El archivo contiene información potencialmente identificable de los anfitriones (nombres, descripciones y enlaces a perfiles). Por eso `data/raw/` está excluida mediante `.gitignore` y cada integrante descarga el archivo desde la fuente. Solo se versionan datos procesados que no contienen información personal.
+* **Alcance.** Se analizan solo alojamientos completos (*Entire home/apt*): 15.383 anuncios, que quedan en 14.758 tras la limpieza.
+* **Reproducibilidad.** Semilla aleatoria fija (42) y partición entrenamiento/prueba 80/20 sin fuga de datos.
+* **Clases donde se aprende algo de los datos.** Los pasos que aprenden parámetros del entrenamiento son clases con un contrato común (`ajustar()` / `transformar()`). Las operaciones que no aprenden nada son funciones.
+* **Patrón Strategy en la imputación.** Permite cambiar entre mediana, media y mediana por grupo sin reescribir el imputador. Se eligió la mediana: las tres estrategias cambian la desviación de `beds` en menos de 1 % y la mediana es la más simple y coherente con la asimetría de los datos.
+* **Vectorización.** El escalamiento vectorizado es 41,1 veces más rápido que el bucle `for` y usa 0,18 veces su memoria. Una medición anterior registraba un 24 % más de memoria, pero esa cifra medía una conversión a lista y no el escalador, y se corrigió en F3.
+* **Extractor de comodidades.** Es el paso más costoso del pipeline (82 % del tiempo). Se mantiene la versión con `json` porque detecta filas mal formadas, aunque usa más memoria que la versión sin `json`.
 
-La carpeta data/raw/ está excluida del seguimiento de Git mediante .gitignore. Cada usuario debe obtener el dataset desde la fuente original y conservarlo localmente.
-
-La ejecución de F1 requiere que el archivo esté disponible en la ubicación y con el nombre especificados, ya que las auditorías del diccionario de variables y las comprobaciones de calidad leen directamente sus contenidos.
-Se debe utilizar la versión correspondiente a la captura documentada, porque otras versiones pueden presentar diferencias en la cantidad de registros, las variables y sus valores.
-
-El repositorio podrá incluir datos procesados únicamente después de verificar que no contengan información personal identificable.
-Los datos son comunes a todas las fases (`data/`); los cuadernos se separan por fase.
-
-Semilla aleatoria fijada en 42 para asegurar reproducibilidad.
-Registro breve de las decisiones relevantes y su motivo, actualizado al cerrar cada fase.
-
-Se ha decidido trabajar en el proyecto en base a programación orientada objetos a través de la modularidad con cuatro módulos de Python dentro de /src. Como decisión de optimización, se adoptó el procesamiento vectorizado con pandas para el escalamiento de variables, obteniendo una ejecución aproximadamente 5 veces más rápida que la versión iterativa con for, aunque con un consumo de memoria un 24 % mayor. Esta arquitectura favorece la reutilización, trazabilidad y mantenimiento del código para las siguientes fases del proyecto.
