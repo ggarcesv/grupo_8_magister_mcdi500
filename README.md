@@ -95,6 +95,8 @@ Las dependencias y sus versiones se especifican en requirements.txt, que debe ma
 - pytest==9.1.1
 - scikit-learn==1.9.1
 
+Para comprobar los módulos se deben pasar las 9 pruebas con `python -m pytest -v`
+
 ## Instrucciones para reproducir el proyecto
 
 1. Clonar el repositorio.
