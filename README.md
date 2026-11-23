@@ -38,23 +38,23 @@ requirements.txt    dependencias con versiones fijas
 
 |Fase|Notebook|Entrega a la fase siguiente|
 |-|-|-|
-|F1 · Definición|Problema y objetivos, entorno, procedencia y huella del dataset|Ficha del dataset y metadatos|
-|F2 · Preprocesamiento|Exploración, limpieza, imputación comparada, comodidades y One-Hot|`airbnb\_procesado.csv` (14.758 × 50)|
-|F3 · Núcleo algorítmico|Clases, pipeline, validación contra F2, recursividad, eficiencia y patrón Strategy|Cuatro artefactos en `data/processed/`|
-|F4 · Comunicación|Copia interpretable verificada, figuras, eficiencia y validación|Figuras en `F4/figuras/` y `docs/hallazgos\_f4.csv`|
+|F1 - Definición|Problema y objetivos, entorno, procedencia y huella del dataset|Ficha del dataset y metadatos|
+|F2 - Preprocesamiento|Exploración, limpieza, imputación comparada, comodidades y One-Hot|`airbnb\_procesado.csv` (14.758 × 50)|
+|F3 - Núcleo algorítmico|Clases, pipeline, validación contra F2, recursividad, eficiencia y patrón Strategy|Cuatro artefactos en `data\processed/`|
+|F4 - Comunicación|Copia interpretable verificada, figuras, eficiencia y validación|Figuras en `F4\figuras\` y `docs\hallazgos\_f4.csv`|
 
 
 ## Módulos  de `src/`
 
 |Módulo|Responsabilidad|
 |-|-|
-|`carga.py`|Lectura del CSV y validación estricta del esquema|
-|`transformadores.py`|Clase base `Transformador` y sus once clases hijas de limpieza y transformación|
-|`estrategias.py`|Patrón Strategy para la imputación: `EstrategiaImputacion`, `PorMediana`, `PorMedia`, `PorMedianaDeGrupo`|
-|`pipeline.py`|Clase `Pipeline` que encadena los pasos y `construir\_pipeline(config)` que los crea desde la configuración|
-|`medicion.py`|Medición reproducible de tiempo (`timeit`) y memoria pico (`tracemalloc`)|
-|`comunicacion.py`|Copia interpretable (inversa del escalamiento), intervalos de Wilson y guardado de figuras|
-|`utilidades.py`|Normalización de nombres de columnas (`normalizar\_nombre()`, `normalizar\_columnas()`) y excepción del dominio `ProyectoError`
+|carga.py|Lectura del CSV y validación estricta del esquema|
+|transformadores.py|Clase base `Transformador` y sus once clases hijas de limpieza y transformación|
+|estrategias.py|Patrón Strategy para la imputación: `EstrategiaImputacion`, `PorMediana`, `PorMedia`, `PorMedianaDeGrupo`|
+|pipeline.py|Clase `Pipeline` que encadena los pasos y `construir\_pipeline(config)` que los crea desde la configuración|
+|medicion.py|Medición reproducible de tiempo (`timeit`) y memoria pico (`tracemalloc`)|
+|comunicacion.py|Copia interpretable (inversa del escalamiento), intervalos de Wilson y guardado de figuras|
+|utilidades.py|Normalización de nombres de columnas (`normalizar\_nombre()`, `normalizar\_columnas()`) y excepción del dominio `ProyectoError`
 
 
 ## Requisitos y ejecución
