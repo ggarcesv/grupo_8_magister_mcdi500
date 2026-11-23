@@ -25,14 +25,27 @@ El análisis tendrá un enfoque descriptivo y exploratorio. No pretende establec
 ## Estructura del repositorio
 
 ```
-data/raw/        datos originales, sin modificar
-data/processed/  datos tras limpieza y transformación (F2)
-docs/            diccionario, fichas y metadatos
-src/             módulos reutilizables del proyecto
-F1/ F2/ F3/ F4/  cuadernos e informes de cada fase
+data/raw/           datos originales, sin modificar (excluidos de Git)
+data/processed/     artefactos de F2 y F3 (dataset procesado, partición y parámetros)
+docs/               diccionario de variables, metadatos, validación del dataset y hallazgos de F4
+src/                módulos reutilizables del proyecto
+F1/ F2/ F3/ F4/     notebook de cada fase
+F4/figuras/         figuras finales exportadas por el notebook F4
+requirements.txt    dependencias con versiones fijas
 ```
 
-## Módulos
+## Fases
+
+|Fase|Notebook|Entrega a la fase siguiente|
+|-|-|-|
+|F1 · Definición|Problema y objetivos, entorno, procedencia y huella del dataset|Ficha del dataset y metadatos|
+|F2 · Preprocesamiento|Exploración, limpieza, imputación comparada, comodidades y One-Hot|`airbnb\_procesado.csv` (14.758 × 50)|
+|F3 · Núcleo algorítmico|Clases, pipeline, validación contra F2, recursividad, eficiencia y patrón Strategy|Cuatro artefactos en `data/processed/`|
+|F4 · Comunicación|Copia interpretable verificada, figuras, eficiencia y validación|Figuras en `F4/figuras/` y `docs/hallazgos\_f4.csv`|
+
+
+## Módulos  de `src/`
+
 
 ```
 src/carga.py: lectura de archivos externos y validación estricta de esquema. 
